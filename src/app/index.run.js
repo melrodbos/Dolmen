@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('theNextGenerator')
+    .module('dolmen')
     .run(runBlock);
 
   /** @ngInject */
