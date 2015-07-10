@@ -2,8 +2,8 @@
   'use strict';
 //angular is my dictionary or an object
 //.module is a key that belongs to the dictionary
-//module('dolmen') is a function
-//.directive is a method that is a ssigned a 'string' and a variable
+//module('dolmen') is a function,
+//.directive is a method that is assigned a 'string' and a variable
 //function and var is how I define identifiers
 //variable and function hoisting = the way the computer scans the doc and grabs the identifiers first.
 
@@ -67,6 +67,5 @@
       templateUrl: 'app/t_dash/t_dash.html'
     });
 }//End of routeConfig
-);
 
 })();
