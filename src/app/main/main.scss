@@ -1,0 +1,77 @@
+/*--------------- Header*/
+
+.header_wrap{
+	width: 100%;
+	padding: 20px 0;
+	background-color: #E6F99D;
+}
+
+.logo{
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	color: #041122;
+}
+
+.logo h1{
+	margin-top: 0;
+}
+
+.intro_copy{
+	text-align: center;
+	padding: 50px 0;
+}
+
+
+/*--------------- Navigation*/
+
+.nav ul{
+	margin-right: 20px;
+}
+.nav ul li{
+	display: inline-block;
+	padding: 13px;
+	list-style: none;
+	text-transform: uppercase;
+}
+
+.nav ul li a{
+	color:#041122;
+}
+
+/*--------------- Footer*/
+.footer_wrap{
+	background-color: #C8E98E;
+	padding: 20px 0;
+}
+
+/*--------------- Buttons*/
+.btn{
+    padding: 12px 20px;
+    font-family: 'Carrois Gothic', sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 0;
+    letter-spacing: 0.0725em;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    text-transform: uppercase;
+}
+
+.btn.blue{
+    background:#00b3db;
+}
+
+.btn.blue:hover {
+    background: #9bce4a;
+    color: #FFF;
+}
+
+.btn.green{
+    background-color: #9bce4a;
+}
+
+.btn.green:hover{
+    background-color: #00b3db;
+    color:#fff;
+}
