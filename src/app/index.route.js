@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('dolmen', [ ])
+  .module('dolmen')
     .config([
       '$urlRouterProvider',
       '$stateProvider',
@@ -16,6 +16,11 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main',
+      })
+
+      .state('main', {
+        url: '/main',
+        templateUrl: 'app/main/main.html'
       })
 
       .state('login', {
