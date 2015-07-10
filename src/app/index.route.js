@@ -23,6 +23,11 @@
         templateUrl: 'app/main/main.html'
       })
 
+      .state('features', {
+        url: '/features',
+        templateUrl: 'app/features/features.html'
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/login.html'
