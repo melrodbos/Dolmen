@@ -25,5 +25,17 @@
   "resolutions": {
     "jquery": "~2.1.4",
     "angular": "~1.4.0"
-  }
+  },
+  "homepage": "https://github.com/melrodbos/dolmen",
+  "authors": [
+    "Melissa Rodríguez <m.rodriguez.bosques@gmail.com>"
+  ],
+  "license": "CC0-1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

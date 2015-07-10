@@ -1,7 +1,9 @@
 {
   "name": "dolmen",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "ng-annotate": "^1.0.1"
+  },
   "scripts": {
     "test": "gulp test"
   },
@@ -51,5 +53,17 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "description": "",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melrodbos/dolmen.git"
+  },
+  "author": "Melissa Rodriguez <m.rodriguez.bosques@gmail.com>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/melrodbos/dolmen/issues"
+  },
+  "homepage": "https://github.com/melrodbos/dolmen#readme"
 }
