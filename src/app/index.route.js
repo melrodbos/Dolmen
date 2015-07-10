@@ -28,9 +28,24 @@
         templateUrl: 'app/login/login.html'
       })
 
+      .state('po_login', {
+        url: '/po_login',
+        templateUrl: 'app/po_login/po_login.html'
+      })
+
+      .state('t_login', {
+        url: '/t_login',
+        templateUrl: 'app/t_login/t_login.html'
+      })
+
       .state('po_dash', {
         url: '/po_dash',
         templateUrl: 'app/po_dash/po_dash.html'
+      })
+
+      .state('t_dash', {
+        url: '/t_dash',
+        templateUrl: 'app/t_dash/t_dash.html'
       });
 
   }
