@@ -62,12 +62,15 @@ form {
 
 /*--------------- Buttons*/
 .btn {
-    padding: 12px 20px;
-    font-family: 'Carrois Gothic', sans-serif;
-    font-size: 12px;
+    padding: 0 3em;
+    font-family: 'Raleway', sans-serif;
+		font-weight: 600;
+    font-size: 14px;
     color: #FFF;
+		line-height: 3;
     border-radius: 0;
-    letter-spacing: 0.0725em;
+    letter-spacing: 0.05em;
+		margin: 1.4em .3em;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
@@ -75,16 +78,23 @@ form {
 }
 
 .btn.blue {
-    background:#00b3db;
+    background:#61A6B5;
 }
 
-.btn.blue:hover {
-    background: #9bce4a;
+.btn.blue:hover, .btn.blue_line:hover {
+    background: #61A6B5;
+		opacity: .7;
     color: #FFF;
 }
 
+.btn.blue_line {
+	border: 1px solid #61A6B5;
+	background-color: transparent;
+	color: #61A6B5;
+}
+
 .btn.green {
-    background-color: #9bce4a;
+    background-color: #8EDEAC;
 }
 
 .btn.green:hover {
