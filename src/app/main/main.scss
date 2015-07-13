@@ -82,12 +82,36 @@ p {
 	background: url(../app/global_imgs/back_pattern.png) repeat #fff;
 }
 
-
-/*--------------- Form*/
-form {
-	padding-top: 50px;
-	vertical-align: middle;
+.pov h2 {
+	color: #999;
+	font-size: 70px;
+	font-weight: 100;
 }
+
+.pov p {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/*--------------- Process*/
+.how {
+	padding: 50px 0;
+}
+
+.how h2 {
+	text-align: center;
+	font-weight: 100;
+	font-size: 50px;
+}
+
+/*--------------- Features*/
+.feat {
+	width: 100%;
+	padding: 50px 0;
+	background-color: #303030;
+	color: #b0b0b0;
+}
+
 
 /*--------------- Footer*/
 .footer_wrap{
