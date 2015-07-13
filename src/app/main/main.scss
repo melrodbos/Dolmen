@@ -1,3 +1,28 @@
+
+/*--------------- Global Styles*/
+html, body {
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 14px;
+	font-weight: 400;
+	color: #999;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+.divider{
+	display: block;
+	height: 2px;
+	width: 50px;
+	margin: 15px;
+	background-color: #61A6B5;
+}
+
+.divider.green_div {
+	background-color: #B1F6CB;
+}
 /*--------------- Header*/
 .logo i {
 	font-size: 31px;
@@ -13,7 +38,6 @@
 }
 
 /*--------------- Navigation*/
-
 .nav ul {
 	margin-right: 1em;
 	margin-top: 1em;
