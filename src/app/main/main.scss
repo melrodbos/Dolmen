@@ -15,17 +15,27 @@
 /*--------------- Navigation*/
 
 .nav ul {
-	margin-right: 20px;
+	margin-right: 1em;
+	margin-top: 1em;
 }
 .nav ul li {
 	display: inline-block;
 	padding: 13px;
+	font-weight: 600;
 	list-style: none;
 	text-transform: uppercase;
 }
 
 .nav ul li a {
-	color:#041122;
+	color:#468492;
+	transtition: all .2s ease; /* transition y'all! */
+}
+
+.nav ul a:hover {
+	color: #a8deb7;
+	border-bottom: 2px solid #a8deb7;
+	padding-top: 5px;
+	margin-bottom: 5px;
 }
 
 /*--------------- Content*/
