@@ -97,7 +97,14 @@ form {
     background-color: #8EDEAC;
 }
 
-.btn.green:hover {
-    background-color: #00b3db;
+.btn.green_line {
+	border: 1px solid #8EDEAC;
+	background-color: transparent;
+	color: #8EDEAC;
+}
+
+.btn.green:hover, .btn.green_line:hover {
+    background-color: #8EDEAC;
+		opacity: .7;
     color:#fff;
 }
