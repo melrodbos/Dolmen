@@ -3,7 +3,7 @@
 
   angular
     .module('dolmen', [
-      'ngAnimate',
+      //'ngAnimate',
       'ngCookies',
       'ngTouch',
       'ngSanitize',
