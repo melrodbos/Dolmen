@@ -7,7 +7,7 @@
    $scope.addSlide = function() {
      var newWidth = 600 + slides.length + 1;
      slides.push({
-       image: 'http://placekitten.com/' + newWidth + '/300',
+       image: 'https://placeimg.com/1000/500/tech' + newWidth + '/300',
        text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
          ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
      });
