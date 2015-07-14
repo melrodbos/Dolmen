@@ -37,6 +37,15 @@ p {
 	color: #8A9091;
 }
 
+.logo a {
+	text-decoration: none;
+	color: #8A9091;
+}
+
+.logo a:hover {
+	color: #8A9091;
+}
+
 .logo i {
 	font-size: 31px;
 	margin-right: 4px;
@@ -73,6 +82,7 @@ p {
 	border-bottom: 2px solid #a8deb7;
 	padding-top: 5px;
 	margin-bottom: 5px;
+	text-decoration: none;
 }
 
 /*--------------- POV (Point of View)*/
@@ -128,6 +138,7 @@ p {
 
 .feat p{
 	line-height: 25px;
+	text-align: left;
 }
 
 .feat i {
