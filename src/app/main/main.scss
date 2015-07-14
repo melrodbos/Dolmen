@@ -60,6 +60,7 @@ p {
 }
 
 /*--------------- Navigation*/
+
 .nav ul {
 	margin-right: 1em;
 	margin-top: 1em;
@@ -83,6 +84,11 @@ p {
 	padding-top: 5px;
 	margin-bottom: 5px;
 	text-decoration: none;
+}
+
+/*--------------- UI Bootstrap*/
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
 }
 
 /*--------------- POV (Point of View)*/
@@ -159,7 +165,7 @@ p {
 
 form {
 	margin: 0 auto;
-	width: 50%;
+	width: 90%;
 }
 
 /*--------------- Footer*/
@@ -217,4 +223,13 @@ form {
     background-color: #8EDEAC;
 		opacity: .7;
     color:#fff;
+}
+
+/*--------------- Carousel*/
+.carousel {
+	height: 570px;
+}
+.carousel img {
+	width: 100%;
+	margin: 0 auto;
 }

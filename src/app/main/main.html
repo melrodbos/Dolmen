@@ -50,7 +50,18 @@
       <div class="row">
         <h2>How It Works</h2>
       </div>
-    </div>
+      <!-- Start of Carousel -->
+      <div class="carousel" ng-controller="MainController">
+          <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}">
+              <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+              </div>
+            </slide>
+          </carousel>
+      </div><!-- End of Carousel -->
   </section>
   <!-- End of Process -->
 
@@ -125,31 +136,31 @@
       <form>
         <div class="row">
           <div class="col-md-12">
-        <div class="form-group">
-          <label for="InputNAme">First Name</label>
-          <input type="first_name" class="form-control" id="exampleInputEmail1" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Last Name</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
-        </div>
-      </div>
+            <div class="form-group">
+              <label for="InputNAme">First Name</label>
+              <input type="first_name" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Confirm Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
-        </div>
-        </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+            </div>
+          </div>
         </div>
         <div class="checkbox">
           <label>
