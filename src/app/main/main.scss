@@ -56,7 +56,7 @@ p {
 	font-size: 30px;
 	text-transform: lowercase;
 	display: inline-block;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 }
 
 /*--------------- Navigation*/
@@ -155,6 +155,11 @@ p {
 	text-align: center;
 	font-weight: 100;
 	font-size: 50px;
+}
+
+form {
+	margin: 0 auto;
+	width: 50%;
 }
 
 /*--------------- Footer*/
