@@ -12,6 +12,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // bower:scss
 @import "main.scss";
 // endbower
+//fonts
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,600);
+//endfonts
 
 .browsehappy {
   margin: 0.2em 0;

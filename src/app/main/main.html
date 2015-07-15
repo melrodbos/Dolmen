@@ -1,40 +1,184 @@
 <div>
-
+  <!-- Header -->
   <header class="header_wrap">
-  		<div class="container">
-  			<div class="row">
-  				<div class="pull-left">
-  					<div class="logo">
-  						<h1>Dolmen</h1>
-  					</div>
-  				</div>
-  				<div class="pull-right">
-  					<div class="pull-left">
-  						<nav class="nav" id="site-navigation" class="main-navigation">
-  							<ul>
-  								<li><a href="#/main">How it works?</a></li>
-  								<li><a href="#/features">Features</a></li>
-  								<li><a href="#/main">FAQ</a></li>
-  							</ul>
-  						</nav>
-  					</div>
-  					<div class="pull-right margin_right_10">
-  						<div class="margint45">
-  							<a href="#/po_dash" id="special_btn" class="btn blue">Sign Up</a>
-  							<a href="#/po_login" id="special_btn" class="btn green">Login</a>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
+    <div class="container">
+      <div class="row">
+        <div class="pull-left">
+          <div class="logo">
+            <!-- Font Awesome for logo placement -->
+            <a href="#/main"><i class="fa fa-comments-o"></i>
+            <h1>Dolmen</h1></a>
+          </div>
+        </div>
+        <div class="pull-right">
+          <div class="pull-left">
+            <nav class="nav" id="site-navigation" class="main-navigation">
+              <ul>
+                <li><a href="#/main">Process</a></li>
+                <li><a href="#/main">Features</a></li>
+                <li><a href="#/main">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="pull-right margin_right_10">
+            <div class="margint45">
+              <a href="#/main" id="special_btn" class="btn blue_line">Sign Up</a>
+              <a href="#/po_login" id="special_btn" class="btn green_line">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+  <!-- End of Header -->
+  <!-- Start of Point of View -->
+  <section class="pov">
+    <div class="container">
+      <div class="row">
+        <div class="intro_copy">
+          <h2>Manage, track and create maintenance requests.</h2>
+          <span class="divider"></span>
+          <p>An app for Property Owners and their tenants.</p>
+          <a href="#/features" class="btn blue">Learn More</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Start of Process -->
+  <section class="how">
+    <div class="container">
+      <div class="row">
+        <h2>How It Works</h2>
+      </div>
+      <!-- Start of Carousel (UI Bootstrap reference implementation)-->
+      <div class="carousel" ng-controller="MainController">
+          <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}">
+              <div class="carousel-caption">
+                <h4>Slide {{$index}}</h4>
+                <p>{{slide.text}}</p>
+              </div>
+            </slide>
+          </carousel>
+      </div><!-- End of Carousel -->
+  </section>
+  <!-- End of Process -->
 
-  			<div class="row">
-  				<div class="intro_copy">
-  					<h2>Wafer gingerbread soufflé bear</h2>
-  					<p>Pastry muffin donut liquorice liquorice jelly beans. Bear claw gingerbread jelly cupcake. Powder biscuit cake cake wafer.</p>
-  					<a href="#/features" class="btn blue">Learn More</a>
-  				</div>
-  			</div>
-  		</div>
-  	</header>
+  <!-- Start of Features -->
+  <!-- First row of Columns -->
+  <section class="feat">
+    <div class="container">
+      <div class="row">
+        <h2>Easy To Use Features</h2>
+        <div class="col-md-3">
+          <i class="fa fa-home"></i>
+          <h3>Manage Properties</h3>
+          <span class="divider green_div"></span>
+          <p>Baboiii underweaaar tatata bala tu uuuhhh hana dul sae la bodaaa aaaaaah. Bappleees daa chasy jiji underweaaar. Aaaaaah jiji gelatooo hana dul sae. Hahaha daa hana dul sae tulaliloo. Chasy tulaliloo tank yuuu!</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user"></i>
+          <h3>Add / Remove Tenants</h3>
+          <span class="divider green_div"></span>
+          <p>Minions ipsum gelatooo hahaha bananaaaa wiiiii aaaaaah hana dul sae. Bee do bee do bee do la bodaaa underweaaar aaaaaah poopayee. Underweaaar tulaliloo po kass tulaliloo ti aamoo! Aaaaaah tatata bala tu pepete underweaaar.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-envelope-o"></i>
+          <h3>Completion Notifications</h3>
+          <span class="divider green_div"></span>
+          <p>Gelatooo ti aamoo! Jeje ti aamoo! Jeje wiiiii gelatooo para tú. Me want bananaaa! jeje chasy bee do bee do bee do ti aamoo! Jeje bee do bee do bee do. Po kass bananaaaa chasy para tú pepete poopayee po kass.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-file-o"></i>
+          <h3>Export Reports</h3>
+          <span class="divider green_div"></span>
+          <p>Po kass belloo! But daa hahaha belloo! Bee do bee do bee do poulet tikka masala. Tank yuuu! bappleees belloo! Uuuhhh hana dul sae wiiiii.</p>
+        </div>
+      </div>
+      <!-- Second row of Columns -->
+      <div class="row">
+        <div class="col-md-3">
+          <i class="fa fa-home"></i>
+          <h3>Add Requests</h3>
+          <span class="divider green_div"></span>
+          <p>Baboiii underweaaar tatata bala tu uuuhhh hana dul sae la bodaaa aaaaaah. Bappleees daa chasy jiji underweaaar. Aaaaaah jiji gelatooo hana dul sae. Hahaha daa hana dul sae tulaliloo. Chasy tulaliloo tank yuuu!</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user"></i>
+          <h3>Manage Requests</h3>
+          <span class="divider green_div"></span>
+          <p>Minions ipsum gelatooo hahaha bananaaaa wiiiii aaaaaah hana dul sae. Bee do bee do bee do la bodaaa underweaaar aaaaaah poopayee. Underweaaar tulaliloo po kass tulaliloo ti aamoo! Aaaaaah tatata bala tu pepete underweaaar.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-envelope-o"></i>
+          <h3>Requests History</h3>
+          <span class="divider green_div"></span>
+          <p>Gelatooo ti aamoo! Jeje ti aamoo! Jeje wiiiii gelatooo para tú. Me want bananaaa! jeje chasy bee do bee do bee do ti aamoo! Jeje bee do bee do bee do. Po kass bananaaaa chasy para tú pepete poopayee po kass.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-star-half-o"></i>
+          <h3>Rate Requests</h3>
+          <span class="divider green_div"></span>
+          <p>Po kass belloo! But daa hahaha belloo! Bee do bee do bee do poulet tikka masala. Tank yuuu! bappleees belloo! Uuuhhh hana dul sae wiiiii.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Features-->
+  <!-- Start of SignUp -->
+  <section class="signup">
+    <div class="container">
+      <div class="row">
+        <h2>Sign Up Today</h2>
+      </div>
+      <!-- start of Form -->
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="InputNAme">First Name</label>
+              <input type="first_name" class="form-control" id="exampleInputEmail1" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Last Name</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+            </div>
+          </div>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I have read and accept the Terms &amp; Conditions.
+          </label>
+        </div>
+        <a href="#/po_dash" class="btn blue">Sign Up</a>
+      </form>
+    </div>
+  </section>
+  <!-- End of Form -->
 
-</div>
+  <!-- Start of Footer -->
+  <footer class="footer_wrap">
+    <div class="container">
+      <div class="row">
+        <p>© Dolmen 2015</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->

@@ -1,77 +1,237 @@
+
+/*--------------- Global Styles*/
+html, body {
+	font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 14px;
+	font-weight: 400;
+	color: #999;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+.divider{
+	display: block;
+	height: 2px;
+	width: 50px;
+	margin: 15px;
+	background-color: #61A6B5;
+}
+
+.divider.green_div {
+	background-color: #B1F6CB;
+}
 /*--------------- Header*/
-
-.header_wrap{
+.header_wrap {
 	width: 100%;
-	padding: 20px 0;
-	background-color: #E6F99D;
+	padding: 15px 0;
+	background-color: #FFFEDB;
 }
 
-.logo{
-	font-family: 'Montserrat', sans-serif;
+.logo {
+	font-family: 'Monserrat', sans-serif;
 	text-transform: uppercase;
-	color: #041122;
+	margin-top: 2em;
+	color: #8A9091;
 }
 
-.logo h1{
+.logo a {
+	text-decoration: none;
+	color: #8A9091;
+}
+
+.logo a:hover {
+	color: #8A9091;
+}
+
+.logo i {
+	font-size: 31px;
+	margin-right: 4px;
+}
+
+.logo h1 {
 	margin-top: 0;
+	font-size: 30px;
+	text-transform: lowercase;
+	display: inline-block;
+	letter-spacing: -1px;
 }
-
-.intro_copy{
-	text-align: center;
-	padding: 50px 0;
-}
-
 
 /*--------------- Navigation*/
 
-.nav ul{
-	margin-right: 20px;
+.nav ul {
+	margin-right: 1em;
+	margin-top: 1em;
 }
-.nav ul li{
+.nav ul li {
 	display: inline-block;
 	padding: 13px;
+	font-weight: 600;
 	list-style: none;
 	text-transform: uppercase;
 }
 
-.nav ul li a{
-	color:#041122;
+.nav ul li a {
+	color:#468492;
+	transtition: all .2s ease; /* transition y'all! */
+}
+
+.nav ul a:hover {
+	color: #a8deb7;
+	border-bottom: 2px solid #a8deb7;
+	padding-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+/*--------------- UI Bootstrap*/
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+
+/*--------------- POV (Point of View)*/
+.pov {
+	width: 100%;
+	padding: 50px 0;
+	background: url(../app/global_imgs/back_pattern.png) repeat #fff;
+}
+
+.pov h2 {
+	color: #999;
+	font-size: 70px;
+	font-weight: 100;
+}
+
+.pov p {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+/*--------------- Process*/
+.how {
+	padding: 50px 0;
+}
+
+.how h2 {
+	text-align: center;
+	font-weight: 100;
+	font-size: 50px;
+	padding-bottom: 20px;
+	margin-top: 0;
+}
+
+/*--------------- Features*/
+.feat {
+	width: 100%;
+	padding: 50px 0;
+	background-color: #303030;
+	color: #b0b0b0;
+}
+
+.feat h2 {
+	text-align: center;
+	font-weight: 100;
+	font-size: 50px;
+	margin-bottom: 70px;
+}
+
+.feat h3 {
+	font-family: 'Monserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.feat p{
+	line-height: 25px;
+	text-align: left;
+}
+
+.feat i {
+	font-size: 20px;
+	color: #B1F6CB;
+}
+
+/*--------------- SignUp*/
+.signup {
+	padding: 50px;
+}
+
+.signup h2 {
+	text-align: center;
+	font-weight: 100;
+	font-size: 50px;
+}
+
+form {
+	margin: 0 auto;
+	width: 90%;
 }
 
 /*--------------- Footer*/
 .footer_wrap{
-	background-color: #C8E98E;
+	background-color: #b1f6cb;
+	text-transform: lowercase;
+	font-weight: 600;
 	padding: 20px 0;
 }
 
 /*--------------- Buttons*/
-.btn{
-    padding: 12px 20px;
-    font-family: 'Carrois Gothic', sans-serif;
-    font-size: 12px;
-    color: #FFF;
-    border-radius: 0;
-    letter-spacing: 0.0725em;
+.btn {
+    padding: 0 3em;
+    font-family: 'Raleway', sans-serif;
+		font-weight: 600;
+    font-size: 14px;
+    border-radius: 1.6em;
+		color: #FFF;
+		line-height: 3;
+    letter-spacing: 0.05em;
+		margin: 1.4em .3em;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     text-transform: uppercase;
 }
 
-.btn.blue{
-    background:#00b3db;
+.btn.blue {
+    background:#61A6B5;
 }
 
-.btn.blue:hover {
-    background: #9bce4a;
+.btn.blue:hover, .btn.blue_line:hover {
+    background: #61A6B5;
+		opacity: .7;
     color: #FFF;
 }
 
-.btn.green{
-    background-color: #9bce4a;
+.btn.blue_line {
+	border: 1px solid #61A6B5;
+	background-color: transparent;
+	color: #61A6B5;
 }
 
-.btn.green:hover{
-    background-color: #00b3db;
+.btn.green {
+    background-color: #8EDEAC;
+}
+
+.btn.green_line {
+	border: 1px solid #8EDEAC;
+	background-color: transparent;
+	color: #8EDEAC;
+}
+
+.btn.green:hover, .btn.green_line:hover {
+    background-color: #8EDEAC;
+		opacity: .7;
     color:#fff;
+}
+
+/*--------------- Carousel*/
+.carousel {
+	height: 500px;
+}
+.carousel img {
+	width: 100%;
+	margin: 0 auto;
 }

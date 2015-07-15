@@ -1,18 +1,35 @@
+<!-- Start of header -->
 <header class="header_wrap">
 		<div class="container">
 			<div class="row">
 				<div class="pull-left">
-					<div class="logo">
-						<h1>Dolmen</h1>
-					</div>
-				</div>
+          <div class="logo">
+            <!-- Font Awesome for logo placement -->
+            <a href="#/main"><i class="fa fa-comments-o"></i>
+            <h1>Dolmen</h1></a>
+          </div>
+        </div>
 				<div class="pull-right">
-
 					<div class="pull-right margin_right_10">
 						<div class="margint45">
-							<a href="#/po_dash" id="special_btn" class="btn blue">Property Owner login</a>
+							<a href="#/t_login" id="special_btn" class="btn blue_line">Are you a tenant?</a>
 						</div>
 					</div>
 				</div>
 			</div>
-	</header>
+	</header><!-- End of Header -->
+	<!-- Start of Sign Up Form -->
+	<div class="col-md-12" id="po_log">
+	<form class="container">
+		<h2 id="po_login">Property Owner Login</h2>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address:</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password:</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <a href="#/po_dash" id="special_btn" class="btn blue">Login</a>
+	</div>
+</form>
