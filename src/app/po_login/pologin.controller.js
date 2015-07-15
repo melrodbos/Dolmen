@@ -1,17 +1,15 @@
 (function() {
-  'use strict';
-
   angular
-  .module('dolmen')
-  .controller('PoLoginController', PoLoginController);
-
-  function PoLoginController( $scope, $firebaseAuth ) {
-    var ref = new Firebase('https://dolmen.firebaseio.com/');
-    $scope.email = $firebaseAuth(ref);
-
-    $scope.email = functio
-
-
+  .module('dolmen.login', ['dolmen.services'])
+  .controller('PoLoginController', [
+    '$scope',
+    'authServices',
+    function( $scope, authServices ){
+      $scope.login = function(event) {
+      event.preventDefault();
+      authServices.login(this.model.user, this.model.pass);
+    }
   }
+  ]);
 
 })();
