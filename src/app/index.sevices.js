@@ -23,6 +23,15 @@
           $state.go('/po_dash');
         });
       };
+
+      authServices.logout = function () {
+        authServices.authObj.$unauth();
+      }
+      authServices.getloginstatus = function() {
+        //anytime I call a fn in firebase I use $getAuth...
+        return authServices.authObj.$getAuth();
+      }
+
       return authServices;
     }
 

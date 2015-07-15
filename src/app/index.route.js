@@ -51,24 +51,37 @@
       url: '/po_login',
       templateUrl: 'app/po_login/po_login.html',
       controller: 'PoLoginController',
-      controllerAs: 'PoLogin'
+      controllerAs: 'PoLogin',
+      data: {
+        needsAuth: false
+      }
     })
 
     .state('t_login', {
       url: '/t_login',
       templateUrl: 'app/t_login/t_login.html',
       controller: 'TLoginController',
-      controllerAs: 'tLogin'
+      controllerAs: 'tLogin',
+      data: {
+        needsAuth: false
+      }
     })
 
     .state('po_dash', {
       url: '/po_dash',
-      templateUrl: 'app/po_dash/po_dash.html'
+      templateUrl: 'app/po_dash/po_dash.html',
+      //Since I need authorization to go to this route:
+      data: {
+        needsAuth: true
+      }
     })
 
     .state('t_dash', {
       url: '/t_dash',
-      templateUrl: 'app/t_dash/t_dash.html'
+      templateUrl: 'app/t_dash/t_dash.html',
+      data: {
+        needsAuth: true
+      }
     });
 }//End of routeConfig
 
