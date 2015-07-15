@@ -10,7 +10,8 @@
       'restangular',
       'ui.router',
       'ui.bootstrap',
-      'firebase'
+      'dolmen.services',
+      'dolmen.login'
     ]
   );
 
