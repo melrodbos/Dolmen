@@ -49,12 +49,16 @@
 
     .state('po_login', {
       url: '/po_login',
-      templateUrl: 'app/po_login/po_login.html'
+      templateUrl: 'app/po_login/po_login.html',
+      controller: 'PoLoginController',
+      controllerAs: 'PoLogin'
     })
 
     .state('t_login', {
       url: '/t_login',
-      templateUrl: 'app/t_login/t_login.html'
+      templateUrl: 'app/t_login/t_login.html',
+      controller: 'TLoginController',
+      controllerAs: 'tLogin'
     })
 
     .state('po_dash', {
