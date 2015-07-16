@@ -29,7 +29,7 @@
       }
       authServices.getloginstatus = function() {
         //anytime I call a fn in firebase I use $getAuth...
-        return authServices.authObj.$getAuth();
+        // return authServices.authObj.$getAuth();
       }
 
       return authServices;

@@ -56,7 +56,7 @@
         needsAuth: false
       }
     })
-
+    //Don't need auth to go to this route:
     .state('t_login', {
       url: '/t_login',
       templateUrl: 'app/t_login/t_login.html',
@@ -70,7 +70,7 @@
     .state('po_dash', {
       url: '/po_dash',
       templateUrl: 'app/po_dash/po_dash.html',
-      //Since I need authorization to go to this route:
+      //Since I need authorization to go to this route, it needs to evaluate to true.
       data: {
         needsAuth: true
       }
