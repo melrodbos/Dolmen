@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+//Start of PoLoginController:
   angular
   .module('dolmen.login', ['dolmen.services'])
   .controller('PoLoginController', [

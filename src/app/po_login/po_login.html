@@ -21,16 +21,16 @@
 
 	<!-- Start of Po Login Form -->
 	<div class="col-md-12" id="po_log" >
-	<form class="container" ng-submit="" ng-controller="PoLoginController">
+	<form name="loginform" class="container" ng-controller="PoLoginController">
 		<h2 id="po_login">Property Owner Login</h2>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address:</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="model.user">
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="email@example.com" title:"Email" ng-model="model.user"/>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password:</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="model.pass">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="model.pass" required>
   </div>
-  <a href="#/po_dash" id="special_btn" class="btn blue" ng-click="login($event)">Login</a>
+  <a href="po_dash" id="special_btn" class="btn blue" ng-click="login($event)">Login</a>
 	</div>
 </form>

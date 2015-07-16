@@ -79,6 +79,7 @@
     .state('t_dash', {
       url: '/t_dash',
       templateUrl: 'app/t_dash/t_dash.html',
+      //Totally need authorization to get here...
       data: {
         needsAuth: true
       }
