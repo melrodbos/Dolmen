@@ -9,7 +9,9 @@
       'ngSanitize',
       'restangular',
       'ui.router',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'dolmen.services',
+      'dolmen.login'
     ]
   );
 
