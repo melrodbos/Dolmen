@@ -19,9 +19,10 @@
 		</div>
 </header>
 <!-- Start of Sign Up Form -->
+
 <form name="userForm" class="container">
 	<div class="form-group">
-		<h2 id="po_login">Tenant Login</h2>
+		<h2 id="t_login">Tenant Login</h2>
 		<label for="exampleInputEmail1">Email address:</label>
 		<input name="email" required class="form-control" id="exampleInputEmail1" placeholder="email@example.com" />
 	</div>
@@ -29,10 +30,12 @@
 		<label for="exampleInputPassword1">Password:</label>
 		<input name="name" required class="form-control" id="exampleInputPassword1" placeholder="PasswordExample1" required>
 	</div>
-	<a href="#" id="special_btn" class="btn blue">Take me to my account</a>
+	<div id="button_log">
+	<a href="#/t_dash" id="special_btn" class="btn blue">Login</a>
+	</div>
 </form><!-- End of Sign Up Form -->
 <!-- Start of Footer -->
-<footer class="footer_wrap">
+<footer class="footer_wrap" id="login_footer">
 	<div class="container">
 		<div class="row">
 			<p>© Dolmen 2015</p>
