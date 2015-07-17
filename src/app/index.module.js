@@ -4,7 +4,6 @@
   angular
     .module('dolmen', [
       //'ngAnimate',
-      'jquery',
       'ngCookies',
       'ngTouch',
       'ngSanitize',
