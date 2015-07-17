@@ -23,6 +23,10 @@ p {
 .divider.green_div {
 	background-color: #B1F6CB;
 }
+
+h1 {
+	text-align: center;
+}
 /*--------------- Header*/
 .header_wrap {
 	width: 100%;
@@ -254,11 +258,26 @@ margin-bottom: 15px;
     color:#fff;
 }
 
-/*--------------- Carousel*/
-.carousel {
+/*--------------- Flexslider*/
+.flex-control-paging li a {
+	width: 20px;
+	height: 20px;
+/* 	background: #B1F6CB;
+background: rgba(220, 251, 210, 0.3); */
+}
+
+.flex-control-paging li a.flex-active {
+	/* background: #B1F6CB; */
+}
+
+
+
+
+
+/* .carousel {
 	height: 500px;
 }
 .carousel img {
 	width: 100%;
 	margin: 0 auto;
-}
+} */
