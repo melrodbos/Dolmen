@@ -49,18 +49,33 @@
       <div class="row">
         <h2>How It Works</h2>
       </div>
-      <!-- Start of Carousel (UI Bootstrap reference implementation)-->
-      <div class="carousel" ng-controller="MainController">
-          <carousel interval="myInterval">
-            <slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}">
-              <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
-            </slide>
-          </carousel>
-      </div><!-- End of Carousel -->
+      <!-- Start of flex slider -->
+      <div class="flexslider">
+  <ul class="slides">
+    <li>
+      <h1>¡Hola!</h1>
+    </li>
+    <li>
+      <h1>Salut!</h1>
+    </li>
+    <li>
+      <h1>Content whaaa?</h1>
+    </li>
+  </ul>
+</div><!-- End of flexslider -->
+
+    <!--   Start of Carousel (UI Bootstrap reference implementation)
+    <div class="carousel" ng-controller="MainController">
+        <carousel interval="myInterval">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}">
+            <div class="carousel-caption">
+              <h4>Slide {{$index}}</h4>
+              <p>{{slide.text}}</p>
+            </div>
+          </slide>
+        </carousel>
+    </div>End of Carousel -->
   </section>
   <!-- End of Process -->
 
