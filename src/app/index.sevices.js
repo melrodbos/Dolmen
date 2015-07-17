@@ -1,3 +1,4 @@
+/* global Firebase */
 (function(){
   'use strict';
 
@@ -24,13 +25,13 @@
         });
       };
 
-      // authServices.logout = function () {
-      //   authServices.authObj.$unauth();
-      // }
-      // authServices.getloginstatus = function() {
-      //   //anytime I call a fn in firebase I use $getAuth...
-      // return authServices.authObj.$getAuth();
-      // }
+    //   authServices.logout = function () {
+    //     authServices.authObj.$unauth();
+    //   };
+    //   authServices.getloginstatus = function() {
+    //   //   //anytime I call a fn in firebase I use $getAuth...
+    //   return authServices.authObj.$getAuth();
+    // };
 
       return authServices;
     }

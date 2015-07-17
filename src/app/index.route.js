@@ -60,8 +60,8 @@
     .state('t_login', {
       url: '/t_login',
       templateUrl: 'app/t_login/t_login.html',
-      controller: 'TLoginController',
-      controllerAs: 'tLogin',
+      // controller: 'TLoginController',
+      // controllerAs: 'tLogin',
       data: {
         needsAuth: false
       }

@@ -12,7 +12,7 @@ p {
 	margin-bottom: 20px;
 }
 
-.divider{
+.divider {
 	display: block;
 	height: 2px;
 	width: 50px;
@@ -91,6 +91,20 @@ p {
 	cursor: pointer;
 }
 
+/*--------------- Panels*/
+.panel-default {
+	border-color: rgba(221, 221, 221, 0.38);
+}
+
+.panel {
+background-color: #FBFBFB;
+color: #636363;
+}
+
+.panel-body {
+	padding:15px 50px;
+}
+
 /*--------------- POV (Point of View)*/
 .pov {
 	width: 100%;
@@ -144,7 +158,7 @@ p {
 	font-weight: 600;
 }
 
-.feat p{
+.feat p {
 	line-height: 25px;
 	text-align: left;
 }
@@ -163,6 +177,7 @@ p {
 	text-align: center;
 	font-weight: 100;
 	font-size: 50px;
+	margin-bottom: 30px;
 }
 
 form {
@@ -170,8 +185,20 @@ form {
 	width: 90%;
 }
 
+.form-group {
+	margin: 0 auto;
+width: 100%;
+max-width: 500px;
+margin-bottom: 15px;
+}
+
+.form-control {
+	box-shadow: none;
+	height: 40px;
+}
+
 /*--------------- Footer*/
-.footer_wrap{
+.footer_wrap {
 	background-color: #b1f6cb;
 	text-transform: lowercase;
 	font-weight: 600;
