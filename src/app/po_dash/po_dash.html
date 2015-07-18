@@ -36,8 +36,12 @@
   <div class="panel-body">
     <h3>New Request</h3>
 		<form ng-submit="request.submit()" ng-controller="RequestController as request">
-		<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Request" required/>
-		<input type="text" ng-model="request.description" calss="form-group" name="requests" placeholder="Request" required/>
+			<label>Title:</label>
+		<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
+		<label>Description:</label>
+		<input type="text" ng-model="request.description" calss="form-group" name="description" placeholder="Description" required/>
+		<label>Special Instructions:</label>
+		<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
 		<button type="submit" value="Submit">Submit</button>
 		</form>
   </div>

@@ -15,9 +15,14 @@
 
         self.submit = function() {
           self.data.$add({
-            title: self.title
+            title: self.title,
+            description: self.description,
+            instructions: self.instructions
           });
+          // the following will clear the fields once the request is submited:
           self.title = '';
+          self.description = '';
+          self.instructions = '';
         };
 
       });
