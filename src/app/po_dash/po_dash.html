@@ -44,6 +44,13 @@
 		<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
 		<button type="submit" value="Submit">Submit</button>
 		</form>
+		<blockquote ng-controller="ShowController as show" ng-repeat="request in show.requests">
+			<strong> Stars</strong>
+			<p>{{request.title}}</p>
+			<p>{{request.description}}</p>
+			<p>{{request.instructions}}</p>
+			<cite class="clearfix">—</cite>
+		</blockquote>
   </div>
 </div>
 </section>
