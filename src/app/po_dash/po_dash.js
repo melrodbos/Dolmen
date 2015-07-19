@@ -1,5 +1,3 @@
-/* global angular Firebase */
-
 ;(function(){
   'use strict';
     var app = angular.module('dolmen');
@@ -11,7 +9,7 @@
         var firebase = new Firebase('https://dolmen.firebaseio.com');
 
         self.data = $firebaseArray(firebase);
-        console.log(self.data);
+        // console.log(self.data);
 
         self.submit = function() {
           self.data.$add({

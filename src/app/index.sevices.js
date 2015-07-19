@@ -1,5 +1,5 @@
 /* global Firebase */
-(function(){
+;(function(){
   'use strict';
 
   var services = angular.module('dolmen.services', ['firebase']);
@@ -37,4 +37,4 @@
     }
 
   ]);
-}());
+})();

@@ -1,9 +1,8 @@
-(function() {
+;(function() {
   'use strict';
 //Start of PoLoginController:
-  angular
-  .module('dolmen.login', ['dolmen.services'])
-  .controller('PoLoginController', [
+  var app = angular.module('dolmen.login', ['dolmen.services'])
+  app.controller('PoLoginController', [
     '$scope',
     'authServices',
     function( $scope, authServices ) {
