@@ -1,87 +1,88 @@
 <!-- Start of Header -->
 <header class="header_wrap">
-		<div class="container">
-			<div class="row">
-				<div class="pull-left">
-					<div class="logo">
-            <!-- Font Awesome for logo placement -->
-            <a href="#/main"><i class="fa fa-comments-o"></i>
+	<div class="container">
+		<div class="row">
+			<div class="pull-left">
+				<div class="logo">
+					<!-- Font Awesome for logo placement -->
+					<a href="#/main"><i class="fa fa-comments-o"></i>
             <h1>Dolmen</h1></a>
-          </div>
 				</div>
-				<div class="pull-right">
-					<div class="pull-left">
-						<nav class="nav" id="site-navigation" class="main-navigation">
-							<ul>
-								<li><a href="#">Properties</a></li>
-								<li><a href="#">Payments</a></li>
-								<li><a href="#">Requests</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="pull-right margin_right_10">
-						<div class="margint45">
-							<a href="#/po_dash" id="special_btn" class="btn blue_line">Home</a>
-							<a href="#/main" id="special_btn" class="btn green_line">Logout</a>
-						</div>
+			</div>
+			<div class="pull-right">
+				<div class="pull-left">
+					<nav class="nav" id="site-navigation" class="main-navigation">
+						<ul>
+							<li><a href="#">Properties</a></li>
+							<li><a href="#">Payments</a></li>
+							<li><a href="#">Requests</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="pull-right margin_right_10">
+					<div class="margint45">
+						<a href="#/po_dash" id="special_btn" class="btn blue_line">Home</a>
+						<a href="#/main" id="special_btn" class="btn green_line">Logout</a>
 					</div>
 				</div>
 			</div>
-	</header><!-- End of Header -->
-	<h2 id="title">Property Owner Dashboard</h2>
-	<!-- Start of Panels -->
-	<div id="panel_container">
+		</div>
+</header>
+<!-- End of Header -->
+<h2 id="title">Property Owner Dashboard</h2>
+<!-- Start of Panels -->
+<div id="panel_container">
 	<section class="col-md-4">
-	<div class="panel panel-default">
-  <div class="panel-body">
-    <h3>New Request</h3>
-		<form ng-submit="request.submit()" ng-controller="RequestController as request">
-			<label>Title:</label>
-		<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
-		<label>Description:</label>
-		<input type="text" ng-model="request.description" calss="form-group" name="description" placeholder="Description" required/>
-		<label>Special Instructions:</label>
-		<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
-		<button type="submit" value="Submit">Submit</button>
-		</form>
-		<blockquote ng-controller="ShowController as show" ng-repeat="request in show.requests">
-			<strong> Stars</strong>
-			<p>{{request.title}}</p>
-			<p>{{request.description}}</p>
-			<p>{{request.instructions}}</p>
-			<cite class="clearfix">—</cite>
-		</blockquote>
-  </div>
-</div>
-</section>
-<section class="col-md-4">
-<div class="panel panel-default">
-<div class="panel-body">
-	<h3>Active Request</h3>
-	<ul>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	</ul>
-</div>
-</div>
-</section>
-<section class="col-md-4">
-<div class="panel panel-default">
-<div class="panel-body">
-	<h3>Completed Request</h3>
-	<ul>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	<li>Blah Blah Blah...</li>
-	</ul>
-</div>
-</div>
-</section>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3 id="po_panel_h3">New Request</h3>
+				<form class="po_new_req" ng-submit="request.submit()" ng-controller="RequestController as request">
+					<label>Title:</label>
+					<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
+					<label>Description:</label>
+					<input type="text" ng-model="request.description" calss="form-group" name="description" placeholder="Description" required/>
+					<label>Access Instructions:</label>
+					<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
+					<button type="submit" value="Submit">Submit</button>
+				</form>
+				<blockquote ng-controller="ShowController as show" ng-repeat="request in show.requests">
+					<strong>Pending Requests</strong>
+					<p>{{request.title}}</p>
+					<p>{{request.description}}</p>
+					<p>{{request.instructions}}</p>
+					<cite class="clearfix">—</cite>
+				</blockquote>
+			</div>
+		</div>
+	</section>
+	<section class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3 id="po_panel_h3">Active Request</h3>
+				<ul>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3 id="po_panel_h3">Completed Request</h3>
+				<ul>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+					<li>Blah Blah Blah...</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </div>
 <!-- Start of Footer -->
 <footer class="footer_wrap">
@@ -90,4 +91,5 @@
 			<p>© Dolmen 2015</p>
 		</div>
 	</div>
-</footer><!-- End of Footer -->
+</footer>
+<!-- End of Footer -->
