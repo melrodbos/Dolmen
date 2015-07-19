@@ -36,7 +36,14 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">New Request</h3>
-				<form class="po_new_req" ng-submit="request.submit()" ng-controller="RequestController as request">
+				<blockquote ng-controller="ShowController as show" ng-view="request in show.requests">
+					<strong>Pending Requests</strong>
+					<p>{{show.request.title}}</p>
+					<p>{{show.request.description}}</p>
+					<p>{{show.request.instructions}}</p>
+					<cite class="clearfix">—</cite>
+				</blockquote>
+				<form class="po_new_req"  ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Title:</label>
 					<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
 					<label>Description:</label>
@@ -45,13 +52,7 @@
 					<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
 					<button type="submit" value="Submit">Submit</button>
 				</form>
-				<blockquote ng-controller="ShowController as show" ng-view="request in show.requests">
-					<strong>Pending Requests</strong>
-					<p>{{show.title}}</p>
-					<p>{{show.description}}</p>
-					<p>{{show.instructions}}</p>
-					<cite class="clearfix">—</cite>
-				</blockquote>
+
 			</div>
 		</div>
 	</section>
