@@ -1,5 +1,5 @@
 /* global Firebase */
-(function(){
+;(function(){
   'use strict';
 
   var services = angular.module('dolmen.services', ['firebase']);
@@ -14,6 +14,7 @@
       var authServices = {};
       var auth = new Firebase( 'https://dolmen.firebaseio.com');
       authServices.authObj = $firebaseAuth(auth);
+      console.log(authServices.authObj);
       authServices.login = function (user, pass) {
         authServices.authObj.$authWithPassword({
           email : user,
@@ -37,4 +38,4 @@
     }
 
   ]);
-}());
+})();
