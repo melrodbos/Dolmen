@@ -14,7 +14,7 @@
           info.requests.push(this.request);
           this.request = { };
         };
-});
+
         $http.get('https://dolmen.firebaseio.com/')
         .then(function(response){
           console.log(response);
