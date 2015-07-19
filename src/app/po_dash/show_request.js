@@ -10,10 +10,11 @@
         console.log(this.request);
 
         this.addRequest = function(info) {
+          this.request.createdOn = Date.now();
           info.requests.push(this.request);
           this.request = { };
         };
-
+});
         $http.get('https://dolmen.firebaseio.com/')
         .then(function(response){
           console.log(response);
