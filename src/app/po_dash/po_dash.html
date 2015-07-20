@@ -29,7 +29,7 @@
 		</div>
 </header>
 <!-- End of Header -->
-<h2 id="title">Property Owner Dashboard</h2>
+<h2 ng-show="user" id="title">Hello, {{user}}</h2>
 <!-- Start of Panels -->
 <div id="panel_container">
 	<section class="col-md-4">
@@ -39,15 +39,15 @@
 				<blockquote ng-controller="ShowController as showM" ng-view="request in showM.requests">
 					<strong></strong>
 					<div ng-repeat="maintenance in showM.requests">
-						<p>{{maintenance.category}}</p>
-						<p>{{maintenance.address}}</p>
-						<p>{{maintenance.phone}}</p>
-						<p>{{maintenance.description}}</p>
-						<p>{{maintenance.instructions}}</p>
+						<p><strong>Category: </strong> {{maintenance.category}}</p>
+						<p><strong>Address:  </strong>{{maintenance.address}}</p>
+						<p><strong>Phone: </strong>{{maintenance.phone}}</p>
+						<p><strong>Description: </strong>{{maintenance.description}}</p>
+						<p><strong>Access Instructions: </strong>{{maintenance.instructions}}</p>
+							<span class="divider green_div"></span>
 					</div>
 					<cite class="clearfix"></cite>
 				</blockquote>
-				<span class="divider green_div"></span>
 				<form class="po_new_req" class="form-group" ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Category:</label>
 					<select type="text" ng-model="request.category" class="form-control" name="requests" required>

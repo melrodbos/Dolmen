@@ -19,12 +19,6 @@
         .then(function(response){
           console.log(response.data);
           show.requests = response.data;
-          // var response = {
-          //   title: '',
-          //   description: '',
-          //   instructions: '',
-          //
-          // };
 
         });
 
