@@ -71,8 +71,8 @@
       url: '/po_dash',
       templateUrl: 'app/po_dash/po_dash.html',
       //Since I need authorization to go to this route, it needs to evaluate to true.
-      // controller: 'PanelController',
-      // controllerAs: 'panel',
+      // controller: 'ShowController',
+      // controllerAs: 'showM',
       data: {
         needsAuth: true
       }
