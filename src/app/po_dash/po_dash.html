@@ -36,7 +36,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">New Request</h3>
-				<section ng-controller="ShowController as showM" ng-view="request in showM.requests">
+				<blockquote ng-controller="ShowController as showM" ng-view="request in showM.requests">
 					<strong></strong>
 					<div ng-repeat="maintenance in showM.requests">
 						<p>{{maintenance.category}}</p>
@@ -46,7 +46,7 @@
 						<p>{{maintenance.instructions}}</p>
 					</div>
 					<cite class="clearfix"></cite>
-				</section>
+				</blockquote>
 				<span class="divider green_div"></span>
 				<form class="po_new_req" class="form-group" ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Category:</label>
