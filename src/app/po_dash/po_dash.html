@@ -38,14 +38,16 @@
 				<h3 id="po_panel_h3">New Request</h3>
 				<blockquote ng-controller="ShowController as showM" ng-view="request in showM.requests">
 					<strong>Pending Requests</strong>
-				<div ng-repeat="maintenance in showM.requests">
-					<p>{{maintenance.title}}</p>
-					<p>{{maintenance.description}}</p>
-					<p>{{maintenance.instructions}}</p>
-				</div>
+					<div ng-repeat="maintenance in showM.requests">
+						<p>{{maintenance.title}}</p>
+						<p>{{maintenance.address}}</p>
+						<p>{{maintenance.phone}}</p>
+						<p>{{maintenance.description}}</p>
+						<p>{{maintenance.instructions}}</p>
+					</div>
 					<cite class="clearfix">—</cite>
 				</blockquote>
-					<form class="po_new_req"  ng-controller="RequestController as request" ng-submit="request.submit()">
+				<form class="po_new_req" ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Title:</label>
 					<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
 					<label>Description:</label>
