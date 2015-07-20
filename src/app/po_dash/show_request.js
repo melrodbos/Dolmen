@@ -15,10 +15,16 @@
           this.request = { };
         };
 
-        $http.get('https://dolmen.firebaseio.com/')
+        $http.get('https://dolmen.firebaseio.com/' + '.json')
         .then(function(response){
-          console.log(response);
-          show.requests = response;
+          console.log(response.data);
+          show.requests = response.data;
+          // var response = {
+          //   title: '',
+          //   description: '',
+          //   instructions: '',
+          //
+          // };
 
         });
 
