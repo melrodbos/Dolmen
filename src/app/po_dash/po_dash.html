@@ -36,8 +36,8 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">New Request</h3>
-				<blockquote ng-controller="ShowController as showM" ng-view="request in showM.requests">
-					<strong>Pending Requests</strong>
+				<section ng-controller="ShowController as showM" ng-view="request in showM.requests">
+					<strong></strong>
 					<div ng-repeat="maintenance in showM.requests">
 						<p>{{maintenance.title}}</p>
 						<p>{{maintenance.address}}</p>
@@ -45,15 +45,20 @@
 						<p>{{maintenance.description}}</p>
 						<p>{{maintenance.instructions}}</p>
 					</div>
-					<cite class="clearfix">—</cite>
-				</blockquote>
-				<form class="po_new_req" ng-controller="RequestController as request" ng-submit="request.submit()">
+					<cite class="clearfix"></cite>
+				</section>
+				<span class="divider green_div"></span>
+				<form class="po_new_req" class="form-group" ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Title:</label>
-					<input type="text" ng-model="request.title" calss="form-group" name="requests" placeholder="Title" required/>
+					<input type="text" ng-model="request.title" class="form-control" name="requests" placeholder="Title" required/>
+					<label>Address:</label>
+					<input type="text" ng-model="request.address" calss="form-control" name="address" placeholder="1234 Utopia St. Orlando, FL 32801" required/>
+					<label>Phone:</label>
+					<input type="text" ng-model="request.phone" calss="form-control" name="phone" placeholder="555-555-5555" required/>
 					<label>Description:</label>
-					<input type="text" ng-model="request.description" calss="form-group" name="description" placeholder="Description" required/>
+					<input type="text" ng-model="request.description" calss="form-control" name="description" placeholder="Description" required/>
 					<label>Access Instructions:</label>
-					<input type="text" ng-model="request.instructions" calss="form-group" name="instructions" placeholder="Special Instructions" required/>
+					<input type="text" ng-model="request.instructions" calss="form-control" name="instructions" placeholder="Special Instructions" required/>
 					<button type="submit" value="Submit">Submit</button>
 				</form>
 
