@@ -1,7 +1,8 @@
+/* global angular */
 ;(function() {
   'use strict';
 //Start of PoLoginController:
-  var app = angular.module('dolmen.login', ['dolmen.services'])
+  var app = angular.module('dolmen.login', ['dolmen.services']);
   app.controller('PoLoginController', [
     '$scope',
     'authServices',

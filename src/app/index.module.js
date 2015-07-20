@@ -11,7 +11,7 @@
       'ui.router',
       'ui.bootstrap',
       'dolmen.services',
-      'dolmen.login'
+      'dolmen.login',
     ]
   );
 
