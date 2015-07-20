@@ -14,7 +14,7 @@
 
         self.submit = function() {
           self.data.$add({
-            title: self.category,
+            category: self.category,
             address: self.address,
             phone: self.phone,
             description: self.description,

@@ -29,7 +29,7 @@
 		</div>
 </header>
 <!-- End of Header -->
-<h2 ng-show="user" id="title">Hello, {{user}}</h2>
+<h2 id="title">Hello, {{user}}</h2>
 <!-- Start of Panels -->
 <div id="panel_container">
 	<section class="col-md-4">
@@ -48,8 +48,10 @@
 					</div>
 					<cite class="clearfix"></cite>
 				</blockquote>
+				<div class="row">
+					<div class="col-md-12">
 				<form class="po_new_req" class="form-group" ng-controller="RequestController as request" ng-submit="request.submit()">
-					<label>Category:</label>
+					<label>Category</label>
 					<select type="text" ng-model="request.category" class="form-control" name="requests" required>
 						<option value="Appliance">Appliance</option>
 						<option value="Cabinets">Cabinets</option>
@@ -66,16 +68,18 @@
 						<option value="Roof">Roof</option>
 						<option value="Water Heater">Water Heater</option>
 					</select>
-					<label>Address:</label>
+					<label>Address</label>
 					<input type="text" ng-model="request.address" calss="form-control" name="address" placeholder="1234 Utopia St. Orlando, FL 32801" required/>
-					<label>Phone:</label>
+					<label>Phone</label>
 					<input type="text" ng-model="request.phone" calss="form-control" name="phone" placeholder="555-555-5555" required/>
-					<label>Description:</label>
+					<label>Description</label>
 					<input type="text" ng-model="request.description" calss="form-control" name="description" placeholder="Description" required/>
-					<label>Access Instructions:</label>
+					<label>Access Instructions</label>
 					<input type="text" ng-model="request.instructions" calss="form-control" name="instructions" placeholder="Special Instructions" required/>
 					<button type="submit" value="Submit">Submit</button>
 				</form>
+			</div>
+		</div>
 
 			</div>
 		</div>
