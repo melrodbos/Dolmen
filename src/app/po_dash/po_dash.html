@@ -53,6 +53,7 @@
 				<form class="po_new_req" class="form-group" ng-controller="RequestController as request" ng-submit="request.submit()">
 					<label>Category</label>
 					<select type="text" ng-model="request.category" class="form-control" name="requests" required>
+						<option value="" default selected>Select a Category</option>
 						<option value="Appliance">Appliance</option>
 						<option value="Cabinets">Cabinets</option>
 						<option value="Electrical">Electrical</option>
