@@ -10,17 +10,39 @@
     '$firebaseAuth',
 ]);
 
+//--------Callback setup--------
+// var ref = new Firebase("https://dolmen.firebaseio.com");
+// var authClient = new FirebaseAuthClient(ref, function(error, user) {
+//   if (error) {
+//     alert(error);
+//     return;
+//   }
+//   if (user) {
+//     doLogin(user);
+//   } else {
+//     showLoginBox ();
+//   }
+//
+// });
+
+
+
+
+
+
+
+
+//----------- Start of Firebase Google login snippet -----------
   var ref = new Firebase("https://dolmen.firebaseio.com");
-ref.authWithOAuthRedirect("google", function(error, authData) {
+ref.authWithOAuthPopup("google", function(error, authData) {
   if (error) {
-    console.log("Login Failed!", error);
+    // console.log("Login Failed!", error);
   } else {
-    console.log("Authenticated successfully with payload:", authData);
+    // console.log("Authenticated successfully with payload:", authData);
   }
 });
-// ]);
 })();
-
+//--------- End of Firebase google login snippet----------
 
 //Firebase simple email and password login
   // var services = angular.module('dolmen.services', ['firebase']);
