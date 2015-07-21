@@ -1,6 +1,14 @@
-/* global Firebase */
+/* global angular Firebase */
 ;(function(){
   'use strict';
+
+  var services = angular.module('dolmen.services', ['firebase']);
+
+  services.factory ('authServices', [
+    '$state',
+    '$timeout',
+    '$firebaseAuth',
+]);
 
   var ref = new Firebase("https://dolmen.firebaseio.com");
 ref.authWithOAuthPopup("google", function(error, authData) {
@@ -10,8 +18,8 @@ ref.authWithOAuthPopup("google", function(error, authData) {
     console.log("Authenticated successfully with payload:", authData);
   }
 });
-
-
+// ]);
+})();
 
 
 //Firebase simple email and password login
@@ -51,4 +59,3 @@ ref.authWithOAuthPopup("google", function(error, authData) {
   //   }
 
   // ]);
-})();
