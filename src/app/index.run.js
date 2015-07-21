@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular
-    .module('dolmen')
+
+  var app = angular.module('dolmen')
     .run(runBlock);
 
   /** @ngInject */
@@ -10,5 +10,15 @@
 
     $log.debug('runBlock end');
   }
-//add .run
+//add .run scripts here:
+app.run(['$rootScope', '$location', function($rootScope, $location)
+{
+  $rootScope.$on('$routeChangeError', function(event, next, previous, error) {
+    if (error === "AUTH_REQUIRED") {
+      $location.path("/");
+    }
+  });
+}]);
+
+
 })();
