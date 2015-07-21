@@ -33,7 +33,7 @@
     })
 
     .state('main', {
-      url: '/main',
+      url: '/',
       templateUrl: 'app/main/main.html'
     })
 
@@ -48,7 +48,7 @@
     })
 
     .state('po_login', {
-      url: '/po_login',
+      url: '/login',
       templateUrl: 'app/po_login/po_login.html',
       controller: 'PoLoginController',
       controllerAs: 'PoLogin',
@@ -68,7 +68,7 @@
     })
 
     .state('po_dash', {
-      url: '/po_dash',
+      url: '/dashboard',
       templateUrl: 'app/po_dash/po_dash.html',
       //Since I need authorization to go to this route, it needs to evaluate to true.
       // controller: 'ShowController',
