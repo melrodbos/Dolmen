@@ -11,7 +11,7 @@
 ]);
 
   var ref = new Firebase("https://dolmen.firebaseio.com");
-ref.authWithOAuthPopup("google", function(error, authData) {
+ref.authWithOAuthRedirect("google", function(error, authData) {
   if (error) {
     console.log("Login Failed!", error);
   } else {
