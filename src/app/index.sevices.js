@@ -3,23 +3,35 @@
   'use strict';
 
   var services = angular.module('dolmen.services', ['firebase']);
-//a factory to generate the firebase login
-  services.factory ('authServices', [
+  services.factory ('Auth', [
     '$state',
     '$timeout',
     '$firebaseAuth',
+
+    function($firebaseAuth) {
+      var ref = new Firebase("https://dolmen.firebaseio.com/");
+      return $firebaseAuth(ref);
+    }
 ]);
 
-//----------- Start of Firebase Google login snippet -----------
-  var ref = new Firebase("https://dolmen.firebaseio.com");
-ref.authWithOAuthRedirect("google", function(error, authData) {
-  if (error) {
-    // console.log("Login Failed!", error);
-  } else {
-    // console.log("Authenticated successfully with payload:", authData);
-  }
 
-});
+
+
+
+
+
+
+
+//----------- Start of Firebase Google login snippet -----------
+//   var ref = new Firebase("https://dolmen.firebaseio.com");
+// ref.authWithOAuthPopup("google", function(error, authData) {
+//   if (error) {
+//     // console.log("Login Failed!", error);
+//   } else {
+//     // console.log("Authenticated successfully with payload:", authData);
+//   }
+//
+// });
 })();//--------- End of Firebase google login snippet----------
 
 
