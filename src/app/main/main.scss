@@ -12,7 +12,7 @@ p {
 	margin-bottom: 20px;
 }
 
-.divider{
+.divider {
 	display: block;
 	height: 2px;
 	width: 50px;
@@ -22,6 +22,10 @@ p {
 
 .divider.green_div {
 	background-color: #B1F6CB;
+}
+
+h1 {
+	text-align: center;
 }
 /*--------------- Header*/
 .header_wrap {
@@ -91,6 +95,20 @@ p {
 	cursor: pointer;
 }
 
+/*--------------- Panels*/
+.panel-default {
+	border-color: rgba(221, 221, 221, 0.38);
+}
+
+.panel {
+background-color: #FBFBFB;
+color: #636363;
+}
+
+.panel-body {
+	padding:15px 50px;
+}
+
 /*--------------- POV (Point of View)*/
 .pov {
 	width: 100%;
@@ -144,7 +162,7 @@ p {
 	font-weight: 600;
 }
 
-.feat p{
+.feat p {
 	line-height: 25px;
 	text-align: left;
 }
@@ -163,6 +181,7 @@ p {
 	text-align: center;
 	font-weight: 100;
 	font-size: 50px;
+	margin-bottom: 30px;
 }
 
 form {
@@ -170,8 +189,20 @@ form {
 	width: 90%;
 }
 
+.form-group {
+	margin: 0 auto;
+width: 100%;
+max-width: 500px;
+margin-bottom: 15px;
+}
+
+.form-control {
+	box-shadow: none;
+	height: 40px;
+}
+
 /*--------------- Footer*/
-.footer_wrap{
+.footer_wrap {
 	background-color: #b1f6cb;
 	text-transform: lowercase;
 	font-weight: 600;
@@ -227,11 +258,26 @@ form {
     color:#fff;
 }
 
-/*--------------- Carousel*/
-.carousel {
+/*--------------- Flexslider*/
+.flex-control-paging li a {
+	width: 20px;
+	height: 20px;
+/* 	background: #B1F6CB;
+background: rgba(220, 251, 210, 0.3); */
+}
+
+.flex-control-paging li a.flex-active {
+	/* background: #B1F6CB; */
+}
+
+
+
+
+
+/* .carousel {
 	height: 500px;
 }
 .carousel img {
 	width: 100%;
 	margin: 0 auto;
-}
+} */

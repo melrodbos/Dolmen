@@ -14,15 +14,14 @@
           <div class="pull-left">
             <nav class="nav" id="site-navigation" class="main-navigation">
               <ul>
-                <li><a href="#/main">Process</a></li>
-                <li><a href="#/main">Features</a></li>
-                <li><a href="#/main">FAQ</a></li>
+                <li><a href="#/process">Process</a></li>
+                <li><a href="#/features">Features</a></li>
               </ul>
             </nav>
           </div>
           <div class="pull-right margin_right_10">
             <div class="margint45">
-              <a href="#/main" id="special_btn" class="btn blue_line">Sign Up</a>
+              <a href="#/signup" id="special_btn" class="btn blue_line">Sign Up</a>
               <a href="#/po_login" id="special_btn" class="btn green_line">Login</a>
             </div>
           </div>
@@ -31,7 +30,7 @@
   </header>
   <!-- End of Header -->
   <!-- Start of Point of View -->
-  <section class="pov">
+  <section class="pov" id="intro">
     <div class="container">
       <div class="row">
         <div class="intro_copy">
@@ -45,29 +44,33 @@
     </div>
   </section>
   <!-- Start of Process -->
-  <section class="how">
+  <section class="how" id="process">
     <div class="container">
       <div class="row">
         <h2>How It Works</h2>
       </div>
-      <!-- Start of Carousel (UI Bootstrap reference implementation)-->
-      <div class="carousel" ng-controller="MainController">
-          <carousel interval="myInterval">
-            <slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}">
-              <div class="carousel-caption">
-                <h4>Slide {{$index}}</h4>
-                <p>{{slide.text}}</p>
-              </div>
-            </slide>
-          </carousel>
-      </div><!-- End of Carousel -->
+      <!-- Start of flex slider -->
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <h1>¡Hola!</h1>
+          </li>
+          <li>
+            <h1>Salut!</h1>
+          </li>
+          <li>
+            <h1>Content whaaa?</h1>
+          </li>
+        </ul>
+      </div>
+      <!-- End of flexslider -->
+    </div>
   </section>
   <!-- End of Process -->
 
   <!-- Start of Features -->
   <!-- First row of Columns -->
-  <section class="feat">
+  <section class="feat" id="features">
     <div class="container">
       <div class="row">
         <h2>Easy To Use Features</h2>
@@ -85,7 +88,7 @@
         </div>
         <div class="col-md-3">
           <i class="fa fa-envelope-o"></i>
-          <h3>Completion Notifications</h3>
+          <h3>Notifications</h3>
           <span class="divider green_div"></span>
           <p>Gelatooo ti aamoo! Jeje ti aamoo! Jeje wiiiii gelatooo para tú. Me want bananaaa! jeje chasy bee do bee do bee do ti aamoo! Jeje bee do bee do bee do. Po kass bananaaaa chasy para tú pepete poopayee po kass.</p>
         </div>
@@ -112,7 +115,7 @@
         </div>
         <div class="col-md-3">
           <i class="fa fa-envelope-o"></i>
-          <h3>Requests History</h3>
+          <h3>Request History</h3>
           <span class="divider green_div"></span>
           <p>Gelatooo ti aamoo! Jeje ti aamoo! Jeje wiiiii gelatooo para tú. Me want bananaaa! jeje chasy bee do bee do bee do ti aamoo! Jeje bee do bee do bee do. Po kass bananaaaa chasy para tú pepete poopayee po kass.</p>
         </div>
@@ -127,58 +130,50 @@
   </section>
   <!-- End of Features-->
   <!-- Start of SignUp -->
-  <section class="signup">
+  <section class="signup" id="signup">
     <div class="container">
       <div class="row">
         <h2>Sign Up Today</h2>
       </div>
       <!-- start of Form -->
-      <form>
+      <form class="form-group" novalidate>
         <div class="row">
           <div class="col-md-12">
-            <div class="form-group">
-              <label for="InputNAme">First Name</label>
-              <input type="first_name" class="form-control" id="exampleInputEmail1" placeholder="First Name">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Last Name</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name">
-            </div>
+            <label for="InputName">First Name</label>
+            <input type="text" class="form-control" title="first_name" placeholder="First Name" required>
+            <label for="exampleInputPassword1">Last Name</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Last Name" required>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" required>
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
             <div class="form-group">
               <label for="exampleInputPassword1">Confirm Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" required>
             </div>
           </div>
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox"> I have read and accept the Terms &amp; Conditions.
+            <input type="checkbox" required> I have read and accept the Terms &amp; Conditions.
           </label>
         </div>
-        <a href="#/po_dash" class="btn blue">Sign Up</a>
+        <a href="#/po_login" class="btn blue">Sign Up</a>
       </form>
     </div>
   </section>
   <!-- End of Form -->
-
-  <!-- Start of Footer -->
-  <footer class="footer_wrap">
-    <div class="container">
-      <div class="row">
-        <p>© Dolmen 2015</p>
-      </div>
+</div>
+<!-- Start of Footer -->
+<footer class="footer_wrap">
+  <div class="container">
+    <div class="row">
+      <p>© Dolmen 2015</p>
     </div>
-  </footer>
-  <!-- End of Footer -->
+  </div>
+</footer>
+<!-- End of Footer -->
