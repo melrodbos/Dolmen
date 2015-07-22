@@ -1,16 +1,62 @@
-/* global angular */
-;(function() {
+/* global Firebase angular */
+(function() {
   'use strict';
-//Start of PoLoginController, remember to include dolmen.services as a dependency:
-  var app = angular.module('dolmen.login', ['dolmen.services']);
-  app.controller('PoLoginController', [
-    '$scope',
-    'Auth',
-    function($scope, Auth) {
-      $scope.auth = Auth;
-      $scope.user = $scope.auth.$getAuth();
+//Start of PoLoginController
+angular.module('dolmen')
+.controller('PoLoginController', function(){
+  var ref = new Firebase('http://dolmen.firebaseapp.com');
+   var self = this;
+   self.login = function() {
+     ref.authWithOAuthPopup('google', function(){
 
-  }
-  ]);
+     });
+   };
 
-})();
+});//End of PoLoginController
+})();//end of IIFE
+
+
+//---------- TWO ---------------
+  // var services = angular.module('dolmen.', ['firebase']);
+  // services.controller('PoLoginController', function($scope){
+  //   // TODO: Move code from `index.services.js:authServices` in here...
+  //
+  //   var firebase = new firebase("https://dolmen.firebaseapp.com");
+  //   this.email = 0;
+  //   var self = this;
+  //   this.email = function(){
+  //     firebase.authWithOAuthPopup('google', function(error, authData){
+  //       // console.log(whaaaaa???);
+  //       $scope.$apply(function(){
+  //         self.email = authData.google.email;
+  //       });
+  //     });
+  //   };
+  //   this.setUser = function(){
+  //     return self.email !== 0;
+  //   };
+  //   });
+  //   angular.module('dolmen').constant('FIREBASE_URL', 'http://dolmen.firebaseapp.com');
+  // })();
+  //
+  //
+  //
+
+
+
+//---------- ONE -----------
+  //   authServices = {};
+  //
+  //   var ref = new Firebase( 'https://dolmen.firebaseio.com' );
+  //   authServices.authObj = $firebaseAuth( ref );
+  //
+  //   authServices.login = function()
+  //   {
+  //     authServices.authObj.$authWithOAuthPopup( 'google')
+  //       .then(function(ref){
+  //         $state.go('po_dash');
+  //       })
+  //       .catch( function( err ){
+  //         console.log( err );
+  //       });
+  //   };

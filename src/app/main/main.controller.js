@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('dolmen')
+  .module('dolmen')
     .controller('MainController', MainController);
 
   /** @ngInject */

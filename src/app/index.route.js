@@ -46,7 +46,19 @@
       data: {
         needsAuth: true
       }
+    })
+
+    .state('po_form', {
+      url: '/maintenance_request',
+      templateUrl: 'app/po_dash/po_dash.html',
+      //Since I need authorization to go to this route, it needs to evaluate to true.
+      controller: 'ShowController',
+      controllerAs: 'showM',
+      data: {
+        needsAuth: true
+      }
     });
+
 }//End of routeConfig
 
 })();
