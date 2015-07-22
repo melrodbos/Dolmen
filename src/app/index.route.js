@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
- var app = angular.module('dolmen')
+ angular.module('dolmen')
   .config(routeConfig);
 
   /** @ngInject */
