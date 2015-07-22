@@ -1,7 +1,7 @@
 ;(function() {
   'use strict';
 
-  var app = angular
+  angular
     .module('dolmen')
     .config(config);
 
