@@ -1,4 +1,4 @@
-(function() {
+;(function() {
   'use strict';
 
   angular
@@ -16,5 +16,4 @@
     toastr.options.preventDuplicates = true;
     toastr.options.progressBar = true;
   }
-
 })();
