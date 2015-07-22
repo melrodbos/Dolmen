@@ -1,22 +1,7 @@
 (function() {
   'use strict';
-//angular is my dictionary or an object
-//.module is a key that belongs to the dictionary
-//module('dolmen') is a function,
-//.directive is a method that is assigned a 'string' and a variable
-//function and var is how I define identifiers
-//variable and function hoisting = the way the computer scans the doc and grabs the identifiers first.
 
-
-//functions can accept inputo and provide output (w a return statement). If I don't
-//get a return out of a function the output is undefined. the implicit return value of
-// fn is undefined.
-// A function can also have side-effects.
-//a fn that belongs to an object is called a method.
-
-
-  angular
-  .module('dolmen')
+ var app = angular.module('dolmen')
   .config(routeConfig);
 
   /** @ngInject */
@@ -61,7 +46,7 @@
       data: {
         needsAuth: true
       }
-    })
+    });
 }//End of routeConfig
 
 })();
