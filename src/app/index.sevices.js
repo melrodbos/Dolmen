@@ -2,7 +2,7 @@
 ;(function(){
   'use strict';
 
-  var services = angular.module('dolmen.services', ['firebase']);
+  var services = angular.module('dolmen.services', ['firebase', 'ui.router']);
   services.factory ('Auth', [
     '$state',
     '$timeout',
@@ -10,7 +10,10 @@
 
     function($firebaseAuth) {
       var ref = new Firebase("https://dolmen.firebaseio.com/");
+      ref.authWithOAuthPopup("google", function(){
       return $firebaseAuth(ref);
+      });
+
     }
 ]);
 

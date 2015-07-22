@@ -1,7 +1,7 @@
-(function() {
+;(function() {
   'use strict';
 
-  angular
+  var app = angular
     .module('dolmen')
     .config(config);
 
@@ -17,4 +17,25 @@
     toastr.options.progressBar = true;
   }
 
+  app.config(['$stateProvider', function($stateProvider) {
+    $stateProvider
+    .when('/', {
+      controller: 'PoLogin',
+      templateUrl: 'app/main/main.html',
+      resolve: {
+        'currentAuth': ['Auth', function(Auth){
+          return Auth.$waitForAuth();
+        }]
+      }
+    })
+    .when('/dashboard', {
+      controller: 'PoLogin',
+      templateUrl: 'app/main/main.html',
+      resolve: {
+        'currentAuth': ['Auth', function(Auth){
+          return Auth.$requireAuth(.);
+        }]
+      }
+    });
+  }]);
 })();
