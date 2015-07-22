@@ -33,7 +33,7 @@
     })
 
     .state('main', {
-      url: '/main',
+      url: '/',
       templateUrl: 'app/main/main.html'
     })
 
@@ -48,13 +48,13 @@
     })
 
     .state('po_login', {
-      url: '/po_login',
+      url: '/login',
       templateUrl: 'app/po_login/po_login.html',
       controller: 'PoLoginController',
       controllerAs: 'PoLogin',
-      data: {
-        needsAuth: false
-      }
+      // data: {
+      //   needsAuth: false
+      // }
     })
     //Don't need auth to go to this route:
     .state('t_login', {
@@ -62,29 +62,29 @@
       templateUrl: 'app/t_login/t_login.html',
       // controller: 'TLoginController',
       // controllerAs: 'tLogin',
-      data: {
-        needsAuth: false
-      }
+      // data: {
+      //   needsAuth: false
+      // }
     })
 
     .state('po_dash', {
-      url: '/po_dash',
+      url: '/dashboard',
       templateUrl: 'app/po_dash/po_dash.html',
       //Since I need authorization to go to this route, it needs to evaluate to true.
       // controller: 'ShowController',
       // controllerAs: 'showM',
-      data: {
-        needsAuth: true
-      }
+      // data: {
+      //   needsAuth: true
+      // }
     })
 
     .state('t_dash', {
       url: '/t_dash',
       templateUrl: 'app/t_dash/t_dash.html',
       //Totally need authorization to get here...
-      data: {
-        needsAuth: true
-      }
+      // data: {
+      //   needsAuth: true
+      // }
     });
 }//End of routeConfig
 

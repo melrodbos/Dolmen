@@ -7,7 +7,7 @@
 
         var show = this;
         this.request = { };
-        console.log(this.request);
+        // console.log(this.request);
 
         this.addRequest = function(info) {
           this.request.createdOn = Date.now();
@@ -17,7 +17,7 @@
 
         $http.get('https://dolmen.firebaseio.com/' + '.json')
         .then(function(response){
-          console.log(response.data);
+          // console.log(response.data);
           show.requests = response.data;
 
         });

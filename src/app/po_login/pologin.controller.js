@@ -1,16 +1,15 @@
 /* global angular */
 ;(function() {
   'use strict';
-//Start of PoLoginController:
+//Start of PoLoginController, remember to include dolmen.services as a dependency:
   var app = angular.module('dolmen.login', ['dolmen.services']);
   app.controller('PoLoginController', [
     '$scope',
-    'authServices',
-    function( $scope, authServices ) {
-      $scope.login = function(event) {
-      event.preventDefault();
-      authServices.login(this.model.user, this.model.pass);
-    };
+    'Auth',
+    function($scope, Auth) {
+      $scope.auth = Auth;
+      $scope.user = $scope.auth.$getAuth();
+
   }
   ]);
 
