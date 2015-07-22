@@ -17,8 +17,8 @@
     toastr.options.progressBar = true;
   }
 
-  app.config(['$stateProvider', function($stateProvider) {
-    $stateProvider
+  app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider
     .when('/', {
       controller: 'PoLogin',
       templateUrl: 'app/main/main.html',
