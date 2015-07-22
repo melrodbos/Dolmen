@@ -2,39 +2,23 @@
 ;(function(){
   'use strict';
 
-  var services = angular.module('dolmen.services', ['firebase', 'ui.router']);
-  services.factory ('Auth', [
+  var services = angular.module('dolmen.services', ['firebase']);
+  services.factory ('authServices', [
     '$state',
     '$timeout',
     '$firebaseAuth',
-
-    function($firebaseAuth) {
-      var ref = new Firebase("https://dolmen.firebaseio.com/");
-      ref.authWithOAuthPopup("google", function(){
-      return $firebaseAuth(ref);
-      });
-
-    }
 ]);
 
+// ----------- Start of Firebase Google login snippet -----------
+  var ref = new Firebase("https://dolmen.firebaseio.com");
+ref.authWithOAuthPopup("google", function(error, authData) {
+  if (error) {
+    // console.log("Login Failed!", error);
+  } else {
+    // console.log("Authenticated successfully with payload:", authData);
+  }
 
-
-
-
-
-
-
-
-//----------- Start of Firebase Google login snippet -----------
-//   var ref = new Firebase("https://dolmen.firebaseio.com");
-// ref.authWithOAuthPopup("google", function(error, authData) {
-//   if (error) {
-//     // console.log("Login Failed!", error);
-//   } else {
-//     // console.log("Authenticated successfully with payload:", authData);
-//   }
-//
-// });
+});
 })();//--------- End of Firebase google login snippet----------
 
 
