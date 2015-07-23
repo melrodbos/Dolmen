@@ -7,8 +7,13 @@ angular.module('dolmen')
   var ref = new Firebase('http://dolmen.firebaseapp.com');
    var self = this;
    self.login = function() {
-     ref.authWithOAuthPopup('google', function(){
-
+     ref.authWithOAuthRedirect('google', function(error){
+       if (error) {
+         console.log("Awesomeness!!!", error);
+       }
+       else {
+         //Totally not getting here EVAH'
+       }
      });
    };
 
