@@ -31,7 +31,7 @@
 
     .state('po_login', {
       url: '/login',
-      templateUrl: 'app/po_login/po_login.html',
+      templateUrl: 'app/main/main.html',
       controller: 'PoLoginController',
       controllerAs: 'PoLogin',
     })
@@ -48,7 +48,7 @@
       url: '/requests',
       templateUrl: 'app/po_dash/po_form.html',
       controller: 'RequestController',
-      controllerAs: 'request',
+      controllerAs: 'request'
     });
 
 }//End of routeConfig
