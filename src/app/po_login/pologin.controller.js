@@ -4,10 +4,10 @@
 //Start of PoLoginController
 angular.module('dolmen')
 .controller('PoLoginController', function(){
-  var ref = new Firebase('http://dolmen.firebaseapp.com');
+  var ref = new Firebase('https://dolmen.firebaseio.com');
    var self = this;
    self.login = function() {
-     ref.authWithOAuthRedirect('google', function(error){
+     ref.authWithOAuthPopup('google', function(error){
        if (error) {
          console.log("Awesomeness!!!", error);
        }
@@ -16,7 +16,10 @@ angular.module('dolmen')
        }
      });
    };
-
+   self.logout = function() {
+     ref.unauth();
+     console.log("And you are out! Bammm!")
+   };
 });//End of PoLoginController
 })();//end of IIFE
 
