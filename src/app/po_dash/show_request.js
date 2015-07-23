@@ -10,7 +10,7 @@
         // console.log(this.request);
 
         this.addRequest = function(info) {
-          this.request.createdOn = Date.now();
+          // this.request.createdOn = Date.now();
           info.requests.push(this.request);
           this.request = { };
         };
