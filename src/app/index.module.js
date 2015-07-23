@@ -9,7 +9,8 @@
       'ngSanitize',
       'restangular',
       'ui.router',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'firebase'
       //'dolmen.services',
       //'dolmen.login',
     ]

@@ -1,9 +1,9 @@
-/* global angular */
+/* global angular Firebase */
 ;(function(){
   'use strict';
     var app = angular.module('dolmen');
 
-      app.controller('RequestController', function($firebaseArray) {
+      app.controller('RequestController', function($firebaseArray, $location) {
 
         var self = this;
 
@@ -19,6 +19,8 @@
             phone: self.phone,
             description: self.description,
             instructions: self.instructions
+          }).then(function(){
+            $location.path('/dashboard');
           });
           // the following will clear the fields once the request is submited:
           self.category = '';

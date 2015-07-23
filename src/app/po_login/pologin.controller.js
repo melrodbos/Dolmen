@@ -14,11 +14,14 @@ angular.module('dolmen')
        else {
          //Totally not getting here EVAH'
        }
+      //  .then(function(){
+      //    $location.path('/dashboard');
+      //  });
      });
    };
    self.logout = function() {
      ref.unauth();
-     console.log("And you are out! Bammm!")
+     console.log("And you are out! Bammm!");
    };
 });//End of PoLoginController
 })();//end of IIFE
