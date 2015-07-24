@@ -1,4 +1,4 @@
-/* global angular Firebase */
+
 ;(function(){
   'use strict';
     var app = angular.module('dolmen');

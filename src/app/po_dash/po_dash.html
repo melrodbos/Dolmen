@@ -13,15 +13,15 @@
 				<div class="pull-left">
 					<nav class="nav" id="site-navigation" class="main-navigation">
 						<ul>
-							<li><a href="#">Properties</a></li>
+							<li><a href="#">Add Property</a></li>
 							<!-- <li><a href="#">Payments</a></li> -->
-							<li><a href="#">Requests</a></li>
+							<li><a href="#">History</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="pull-right margin_right_10">
 					<div class="margint45">
-						<a href="#/main" id="special_btn" class="btn blue_line">Home</a>
+						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
 						<a href="#/main" id="special_btn" class="btn green_line">Logout</a>
 					</div>
 				</div>
@@ -41,6 +41,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">New Requests</h3>
+				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
 					<strong></strong>
 					<div ng-repeat="maintenance in show.requests">
@@ -60,6 +61,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
+				<hr>
 				<ol>
 				<li>
 					<a href="#">1234 Poinsetta Ln.</a>
@@ -105,6 +107,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Completed Requests</h3>
+				<hr>
 				<ol>
 					<li><a href="#">1278 Buffalo Hills St.</a>
 						<ul>
@@ -145,7 +148,12 @@
 <footer class="footer_wrap">
 	<div class="container">
 		<div class="row">
-			<p>© Dolmen 2015</p>
+			<div class="col-md-6">
+				<p style="color:#5F6360;">© Dolmen 2015</p>
+			</div>
+			<div class="col-md-6">
+				<a href="https://github.com/melrodbos/dolmen" target="_blank" style="display:block; text-align:right;"><i class="fa fa-github" style="font-size:30px; color: #5F6360;"></i></a>
+			</div>
 		</div>
 	</div>
 </footer>
