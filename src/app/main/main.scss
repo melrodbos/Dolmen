@@ -184,12 +184,12 @@ color: #636363;
 	margin-bottom: 30px;
 }
 
-form {
+form .po_new_req{
 	margin: 0 auto;
 	width: 90%;
 }
 
-.form-group {
+#mn_req_form {
 margin: 0 auto;
 width: 100%;
 max-width: 500px;
@@ -197,8 +197,14 @@ margin-bottom: 15px;
 }
 
 .form-control {
+	margin-bottom: 15px;
 	box-shadow: none;
 	height: 40px;
+}
+
+#submit_mr {
+	display: block;
+margin: 0 auto;
 }
 
 /*--------------- Footer*/
@@ -271,15 +277,7 @@ margin-bottom: 15px;
 
 }
 
-/* --------------- Flexslider
-.flex-control-paging li a {
-	width: 20px;
-	height: 20px;
-background: #B1F6CB;
-background: rgba(220, 251, 210, 0.3);
+/* --------------- Dashboard*/
+#po_panel_h3{
+	text-transform: uppercase;
 }
-
-.flex-control-paging li a.flex-active {
-	background: #B1F6CB;
-}
- */
