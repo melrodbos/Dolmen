@@ -1,5 +1,5 @@
-/* global angular */
-;(function(){
+
+(function(){
   'use strict';
     var app = angular.module('dolmen');
 

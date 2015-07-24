@@ -1,4 +1,4 @@
-/* global Firebase angular */
+
 (function() {
   'use strict';
 //Start of PoLoginController
@@ -17,7 +17,7 @@ angular.module('dolmen')
       //  .then(function(){
       //    $location.path('/dashboard');
       //  });
-     });
+    });
    };
    self.logout = function() {
      ref.unauth();
