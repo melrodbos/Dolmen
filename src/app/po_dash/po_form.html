@@ -33,8 +33,11 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h2>Submit a Request</h2>
-			<!-- Start of Maintenance request form -->
+			<!-- Start of Maintenance Request Form -->
 			<form class="po_new_req" class="form-group" id="mn_req_form" ng-controller="RequestController as request" ng-submit="request.submit()">
+				<!-- TODO: Add calendar option? -->
+				<label for="date">Date</label>
+				<input type="text" ng-model="request.date" class="form-control" name="date">
 				<label>Category</label>
 				<select type="text" ng-model="request.category" class="form-control" name="requests" required>
 					<option value="" default selected>Select a Category</option>
