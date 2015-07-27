@@ -58,9 +58,9 @@
   <label>Phone</label>
   <input type="text" ng-model="request.phone" class="form-control" name="phone" placeholder="555-555-5555" required/>
   <label>Description</label>
-  <input type="text" ng-model="request.description" class="form-control" name="description" placeholder="Description" required/>
+  <textarea ng-model="request.description" class="form-control" name="description" rows="8" cols="40" required></textarea>
   <label>Access Instructions</label>
-  <input type="text" ng-model="request.instructions" class="form-control" name="instructions" placeholder="Special Instructions" required/>
+  <input type="text" ng-model="request.instructions" class="form-control" name="instructions" required/>
   <button type="submit" value="Submit" class="btn blue" id="submit_mr">Submit</button>
 </form>
 <!-- End of maintenance request form -->
