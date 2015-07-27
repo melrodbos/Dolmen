@@ -48,12 +48,17 @@
       url: '/requests',
       templateUrl: 'app/po_dash/po_form.html',
       controller: 'RequestController',
-      controllerAs: 'request'
+      controllerAs: 'request',
     })
 
     .state('po_active', {
       url: '/active',
-      templateUrl: 'app/po_dash/po_active_details.html'
+      templateUrl: 'app/po_dash/po_active_details.html',
+    })
+
+    .state('properties', {
+      url: '/properties',
+      templateUrl: 'app/po_dash/po_properties.html'
     });
 
 }//End of routeConfig
