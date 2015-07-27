@@ -14,6 +14,7 @@
 
         self.submit = function() {
           self.data.$add({
+            date: self.date,
             category: self.category,
             address: self.address,
             phone: self.phone,
@@ -23,6 +24,7 @@
             $location.path('/dashboard');
           });
           // the following will clear the fields once the request is submited:
+          self.date = '';
           self.category = '';
           self.address = '';
           self.phone = '';
