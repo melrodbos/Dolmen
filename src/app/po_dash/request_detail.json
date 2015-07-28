@@ -9,17 +9,5 @@
     "description": "Past due HOA fees",
     "instructions": "N/A",
     "comments": "Returned mail issue: wrong address"
-  },
-
-  {
-    "date": "2015-07-24",
-    "category": "Roof",
-    "address": "567 Vanguard Point",
-    "tenant": "Sue Ellen",
-    "phone": "555-123-1991",
-    "email": "klibby@gmail.com",
-    "description": "Damaged roof shingles",
-    "instructions": "Key under front door mat",
-    "comments": "Waiting on estimates for shingle replacement"
   }
 ]
