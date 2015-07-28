@@ -10,7 +10,8 @@
       'restangular',
       'ui.router',
       'ui.bootstrap',
-      'firebase'
+      'firebase',
+      'xeditable'
       //'dolmen.services',
       //'dolmen.login',
     ]
