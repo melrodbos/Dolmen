@@ -12,7 +12,7 @@
       list.details = response.data;
     });
     app.run( function( editableOptions ){
-      console.log( editableOptions )
+      // console.log( editableOptions );
       editableOptions.theme = 'bs3';
     });
     $scope.user = {
