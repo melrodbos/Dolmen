@@ -1,28 +1,28 @@
 /* global angular */
-(function() {
+( function() {
   'use strict';
 //Start of PoLoginController
-angular.module('dolmen')
-.controller('PoLoginController', function(){
-  var ref = new Firebase('https://dolmen.firebaseio.com');
+angular.module( 'dolmen' )
+.controller( 'PoLoginController', function( ){
+  var ref = new Firebase( 'https://dolmen.firebaseio.com' );
    var self = this;
    self.login = function() {
-     ref.authWithOAuthPopup('google', function(error){
-       if (error) {
-         console.log("Awesomeness!!!", error);
+     ref.authWithOAuthPopup( 'google', function( error ){
+       if ( error ) {
+         console.log( "Awesomeness!!!", error );
        }
        else {
          //Totally not getting here EVAH'
        }
-      //  .then(function(){
-      //    $location.path('/dashboard');
-      //  });
     });
+    // .otherwise(function(){
+    //     $location.path( '/dashboard' );
+    //  });
    };
-   self.logout = function() {
-     ref.unauth();
-     console.log("And you are out! Bammm!");
-   };
+  //  self.logout = function() {
+  //    ref.unauth();
+  //    console.log( "And you are out! Bammm!" );
+  //  };
 });//End of PoLoginController
 })();//end of IIFE
 
