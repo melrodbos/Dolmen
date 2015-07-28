@@ -20,7 +20,6 @@
       category: 'detail.category',
       address: 'detail.address',
       tenant: 'detail.tenant',
-      address: 'detail.address',
       phone: 'detail.phone',
       email: 'detail.email',
       description: 'detail.description',
