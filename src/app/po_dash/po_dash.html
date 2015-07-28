@@ -13,7 +13,7 @@
 				<div class="pull-left">
 					<nav class="nav" id="site-navigation" class="main-navigation">
 						<ul>
-							<li><a href="#">Add Property</a></li>
+							<li><a href="#/properties">Add Property</a></li>
 							<!-- <li><a href="#">Payments</a></li> -->
 							<li><a href="#">History</a></li>
 						</ul>
@@ -43,10 +43,10 @@
 				<h3 id="po_panel_h3">New Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<strong></strong>
 					<div ng-repeat="maintenance in show.requests">
+						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
-						<p><strong>Address:  </strong>{{maintenance.address}}</p>
+						<p><strong>Address: </strong>{{maintenance.address}}</p>
 						<p><strong>Phone: </strong>{{maintenance.phone}}</p>
 						<p><strong>Description: </strong>{{maintenance.description}}</p>
 						<p><strong>Access Instructions: </strong>{{maintenance.instructions}}</p>
@@ -62,23 +62,23 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
 				<hr>
-				<ol>
+				<ul id="no_more_bullets">
 				<li>
-					<a href="#">1234 Poinsetta Ln.</a>
+					<a href="#/active">1234 Poinsetta Ln.</a>
 					<ul>
 					<li><strong>Created on: </strong>07.22.2015</li>
 					<li><strong>Description: </strong>Unpaid final notice</li>
 					</ul>
 				</li>
 				<span class="divider green_div"></span>
-				<li><a href="#">567 Vanguard Point</a>
+				<li><a href="#/active">567 Vanguard Point</a>
 					<ul>
 						<li><strong>Created on: </strong>07.23.2015</li>
 						<li><strong>Description: </strong>Cracked window</li>
 					</ul>
 				</li>
 				<span class="divider green_div"></span>
-				<li><a href="#">2002 Stone Castle Terrace</a>
+				<li><a href="#/active">2002 Stone Castle Terrace</a>
 					<ul>
 						<li><strong>Created on: </strong>07.24.2015</li>
 						<li><strong>Description: </strong>Pest Control</li>
@@ -99,7 +99,7 @@
 					</ul>
 				</li>
 				<span class="divider green_div"></span>
-			</ol>
+			</ul>
 			</div>
 		</div>
 	</section>
@@ -108,7 +108,7 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Completed Requests</h3>
 				<hr>
-				<ol>
+				<ul id="no_more_bullets">
 					<li><a href="#">1278 Buffalo Hills St.</a>
 						<ul>
 							<li><strong>Completed on: </strong>07.25.2015</li>
@@ -139,7 +139,7 @@
 						</ul>
 					</li>
 						<span class="divider green_div"></span>
-				</ol>
+				</ul>
 			</div>
 		</div>
 	</section>
