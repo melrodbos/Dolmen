@@ -29,12 +29,12 @@
       templateUrl: 'app/features/features.html',
     })
 
-    .state('po_login', {
-      url: '/login',
-      templateUrl: 'app/main/main.html',
-      controller: 'PoLoginController',
-      controllerAs: 'PoLogin',
-    })
+    // .state('po_login', {
+    //   url: '/login',
+    //   templateUrl: 'app/main/main.html',
+    //   controller: 'PoLoginController',
+    //   controllerAs: 'PoLogin',
+    // })
 
     .state('po_dash', {
       url: '/dashboard',
