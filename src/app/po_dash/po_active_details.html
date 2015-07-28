@@ -23,8 +23,8 @@
             <a href="#/dashboard" id="special_btn" class="btn green_line">Dashboard</a>
           </div>
         </div>
+      </div>
     </div>
-  </div>
 </header>
 <!-- End of Header -->
 <div id="active_detail">
@@ -35,16 +35,39 @@
         <hr>
         <section ng-controller="ShowDetailController as ShowDetailCtrl" ng-view="detail in ShowDetailCtrl.details">
           <div ng-repeat="detail in ShowDetailCtrl.details">
-            <p><strong>Date: </strong>{{detail.date}}</p>
-            <p><strong>Category: </strong>{{detail.category}}</p>
-            <p><strong>Tenant Name: </strong>{{detail.tenant}}</p>
-            <p><strong>Address: </strong>{{detail.address}}</p>
-            <p><strong>Phone: </strong>{{detail.phone}}</p>
-            <p><strong>Email: </strong>{{detail.email}}</p>
-            <p><strong>Description: </strong>{{detail.description}}</p>
-            <p><strong>Comments: </strong>{{detail.comments}}</p>
+            <p>
+              <strong>Date: </strong>{{detail.date}}</p>
+            <p>
+              <strong>Category: </strong>{{detail.category}}</p>
+            <p>
+              <strong>Tenant Name: </strong>{{detail.tenant}}</p>
+            <p>
+              <strong>Address: </strong>{{detail.address}}</p>
+            <p>
+              <strong>Phone: </strong>{{detail.phone}}</p>
+            <p>
+              <strong>Email: </strong>{{detail.email}}</p>
+            <p>
+              <strong>Description: </strong>{{detail.description}}</p>
+            <p>
+              <strong>Comments: </strong>{{detail.comments}}</p>
           </div>
         </section>
+        <!-- Single button -->
+        <div class="btn-group">
+          <button type="submit" class="btn blue dropdown-toggle" id="submit_mr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Progress
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Progress</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+        <!-- <input type="checkbox" ng-model="" name="completed" ng-true-value="" ng-false-value="" ng-change="" /> Completed -->
       </div>
     </div>
   </section>
