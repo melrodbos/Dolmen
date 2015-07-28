@@ -1,8 +1,8 @@
 (function(){
   'use strict';
 
-  angular.module( 'dolmen' )
-  .controller( 'ShowDetailController', function( $http ){
+  var app = angular.module( 'dolmen' )
+  app.controller( 'ShowDetailController', function( $http, $scope ){
     var list = this;
     list.details = [ ];
 
@@ -11,6 +11,22 @@
       console.log( response );
       list.details = response.data;
     });
+    app.run( function( editableOptions ){
+      console.log( editableOptions )
+      editableOptions.theme = 'bs3';
+    });
+    $scope.user = {
+      date: 'detail.date',
+      category: 'detail.category',
+      address: 'detail.address',
+      tenant: 'detail.tenant',
+      address: 'detail.address',
+      phone: 'detail.phone',
+      email: 'detail.email',
+      description: 'detail.description',
+      Comments: 'detail.comments'
+    };
+
   });
 })();
 
