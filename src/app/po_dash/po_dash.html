@@ -43,7 +43,6 @@
 				<h3 id="po_panel_h3">New Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<strong></strong>
 					<div ng-repeat="maintenance in show.requests">
 						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
