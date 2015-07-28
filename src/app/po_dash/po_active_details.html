@@ -27,6 +27,7 @@
     </div>
 </header>
 <!-- End of Header -->
+<!-- Start of Detailed Request -->
 <div id="active_detail">
   <section class="col-lg-12">
     <div class="panel panel-default">
@@ -35,25 +36,26 @@
         <hr>
         <section ng-controller="ShowDetailController as ShowDetailCtrl" ng-view="detail in ShowDetailCtrl.details">
           <div ng-repeat="detail in ShowDetailCtrl.details">
+            <a href="#" editable-text="detail.date">{{ detail.date || 'empty' }}</a>
+          <!--   <p>
+            <strong>Date: </strong>{{ detail.date || 'empty' }}</p>
+          <p> -->
+              <strong>Category: </strong>{{ detail.category || 'empty' }}</p>
             <p>
-              <strong>Date: </strong>{{detail.date}}</p>
+              <strong>Tenant Name: </strong>{{ detail.tenant || 'empty' }}</p>
             <p>
-              <strong>Category: </strong>{{detail.category}}</p>
+              <strong>Address: </strong>{{ detail.address || 'empty' }}</p>
             <p>
-              <strong>Tenant Name: </strong>{{detail.tenant}}</p>
+              <strong>Phone: </strong>{{ detail.phone || 'empty' }}</p>
             <p>
-              <strong>Address: </strong>{{detail.address}}</p>
+              <strong>Email: </strong>{{ detail.email || 'empty' }}</p>
             <p>
-              <strong>Phone: </strong>{{detail.phone}}</p>
+              <strong>Description: </strong>{{ detail.description || 'empty' }}</p>
             <p>
-              <strong>Email: </strong>{{detail.email}}</p>
-            <p>
-              <strong>Description: </strong>{{detail.description}}</p>
-            <p>
-              <strong>Comments: </strong>{{detail.comments}}</p>
+              <strong>Comments: </strong>{{ detail.comments || 'empty' }}</p>
           </div>
         </section>
-        <!-- Single button -->
+        <!-- Single Dropdown button -->
         <div class="btn-group">
           <button type="submit" class="btn blue dropdown-toggle" id="submit_mr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Progress
