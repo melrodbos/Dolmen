@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  var app = angular.module( 'dolmen' )
+  var app = angular.module( 'dolmen' );
   app.controller( 'ShowDetailController', function( $http, $scope ){
     var list = this;
     list.details = [ ];
@@ -20,7 +20,6 @@
       category: 'detail.category',
       address: 'detail.address',
       tenant: 'detail.tenant',
-      address: 'detail.address',
       phone: 'detail.phone',
       email: 'detail.email',
       description: 'detail.description',
