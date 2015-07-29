@@ -29,19 +29,16 @@
       templateUrl: 'app/features/features.html',
     })
 
-    // .state('po_login', {
-    //   url: '/login',
-    //   templateUrl: 'app/main/main.html',
-    //   controller: 'PoLoginController',
-    //   controllerAs: 'PoLogin',
-    // })
+    .state('pending_request', {
+      url: '/pending',
+      templateUrl: 'app/po_dash/pending_requests.html',
+      controller: 'PendingController',
+      controllerAs: 'pending',
+    })
 
     .state('po_dash', {
       url: '/dashboard',
       templateUrl: 'app/po_dash/po_dash.html',
-      //Since I need authorization to go to this route, it needs to evaluate to true.
-      controller: 'ShowController',
-      controllerAs: 'showM',
     })
 
     .state('po_form', {
