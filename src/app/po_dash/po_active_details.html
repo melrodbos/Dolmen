@@ -25,9 +25,25 @@
         </div>
       </div>
     </div>
-</header>
-<!-- End of Header -->
-<!-- Start of sub-nav -->
+</header><!-- End of Header -->
+<!-- Start of Sub-Nav -->
+<section id="sub_nav_active" ng-controller="ShowDetailController as ShowDetailCtrl" ng-view="detail in ShowDetailCtrl.details">
+  <div class="container" ng-repeat="detail in ShowDetailCtrl.details">
+    <div class="row" id="sub_nav_text">
+      <p class="col-sm-4">
+        <strong>Request Submitted on: {{ detail.date }}</strong>
+      </p>
+      <p class="col-sm-4">
+        <strong>
+          Category: {{ detail.category }}
+        </strong>
+      </p>
+      <p class="col-sm-4">
+        <strong>Status: {{detail.status}}</strong>
+      </p>
+    </div>
+  </div>
+</section><!-- End of Sub-Nav -->
 
 <!-- Start of Detailed Request -->
 <div id="active_detail">
