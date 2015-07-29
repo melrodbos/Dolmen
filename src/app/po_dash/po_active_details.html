@@ -12,9 +12,9 @@
         <div class="pull-left">
           <nav class="nav" id="site-navigation" class="main-navigation">
             <ul>
-              <li><a href="#/active">Add Property</a></li>
+              <!-- <li><a href="#/active">Add Property</a></li> -->
               <!-- <li><a href="#">Payments</a></li> -->
-              <li><a href="#">History</a></li>
+              <!-- <li><a href="#">History</a></li> -->
             </ul>
           </nav>
         </div>
@@ -27,6 +27,8 @@
     </div>
 </header>
 <!-- End of Header -->
+<!-- Start of sub-nav -->
+
 <!-- Start of Detailed Request -->
 <div id="active_detail">
   <section class="col-lg-12">
@@ -40,31 +42,38 @@
               <strong>Date: </strong>
               {{ detail.date }}
             </p>
-      <!--     <p>
-        <strong>Date: </strong>{{ detail.date || 'empty' }}</p> -->
-          <p>
-              <strong>Category: </strong><a href="#" editable-text="detail.category">{{ detail.category || 'empty' }}</a>
+            <p>
+              <strong>Category: </strong>
+              <a href="#" editable-text="detail.category">{{ detail.category || 'empty' }}</a>
             </p>
             <p>
-              <strong>Description: </strong><a href="#" editable-text="detail.description">{{ detail.description || 'empty' }}</a></p>
+              <strong>Description: </strong>
+              <a href="#" editable-text="detail.description">{{ detail.description || 'empty' }}</a></p>
 
-              <hr>
-              <h5 id="po_panel_h3">Property Info</h5>
-              <hr>
+            <hr>
+            <h5 id="po_panel_h3">Property Info</h5>
+            <hr>
             <p>
-              <strong>Address: </strong><a href="#" editable-text="detail.address">{{ detail.address || 'empty' }}</a></p>
-              <hr>
-              <h5 id="po_panel_h3">Contact Info</h5>
-              <hr>
-              <p>
-                <strong>Tenant Name: </strong><a href="#" editable-text="detail.tenant">{{ detail.tenant || 'empty' }}</a></p>
+              <strong>Address: </strong>
+              <a href="#" editable-text="detail.address">{{ detail.address || 'empty' }}</a></p>
+            <hr>
+            <h5 id="po_panel_h3">Tenant Info</h5>
+            <hr>
+            <p>
+              <strong>Tenant Name: </strong>
+              <a href="#" editable-text="detail.tenant">{{ detail.tenant || 'empty' }}</a></p>
             <p>
               <strong>Phone: </strong>{{ detail.phone || 'empty' }}</p>
             <p>
               <strong>Email: </strong>{{ detail.email || 'empty' }}</p>
-
-            <p>
-              <strong>Comments: </strong>{{ detail.comments || 'empty' }}</p>
+              <hr>
+              <h5 id="po_panel_h3">Description</h5>
+              <hr>
+            <hr>
+            <h5 id="po_panel_h3">Comments</h5>
+            <hr>
+            <p><a href="#" editable-textarea="detail.comments" e-rows="7" e-cols="40">
+              {{ detail.comments || 'empty' }}</a></p>
           </div>
         </section>
         <!-- Single Dropdown button -->
@@ -72,17 +81,31 @@
           <button type="submit" class="btn blue dropdown-toggle" id="submit_mr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Progress
             <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Progress</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Progress</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
         </div>
         <!-- <input type="checkbox" ng-model="" name="completed" ng-true-value="" ng-false-value="" ng-change="" /> Completed -->
       </div>
     </div>
   </section>
 </div>
+<!-- Start of Footer -->
+<footer class="footer_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p style="color:#5F6360;">© Dolmen 2015</p>
+			</div>
+			<div class="col-md-6">
+				<a href="https://github.com/melrodbos/dolmen" target="_blank" style="display:block; text-align:right;"><i class="fa fa-github" style="font-size:30px; color: #5F6360;"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- End of footer -->
