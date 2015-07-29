@@ -27,19 +27,19 @@
     </div>
 </header><!-- End of Header -->
 <!-- Start of Sub-Nav -->
-<section id="sub_nav_active" ng-controller="ShowDetailController as ShowDetailCtrl" ng-view="detail in ShowDetailCtrl.details">
-  <div class="container" ng-repeat="detail in ShowDetailCtrl.details">
+<section id="sub_nav_active" ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.details">
+  <div class="container" ng-repeat="pending in PendingCntrl.details">
     <div class="row" id="sub_nav_text">
       <p class="col-sm-4">
-        <strong>Request Submitted on: {{ detail.date }}</strong>
+        <strong>Request Submitted on: {{ pending.date }}</strong>
       </p>
       <p class="col-sm-4">
         <strong>
-          Category: {{ detail.category }}
+          Category: {{ pending.category }}
         </strong>
       </p>
       <p class="col-sm-4">
-        <strong>Status: {{detail.status}}</strong>
+        <strong>Status: {{pending.status}}</strong>
       </p>
     </div>
   </div>
@@ -50,48 +50,49 @@
   <section class="col-lg-12">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h3 id="po_panel_h3">Request Details</h3>
+        <h3 id="po_panel_h3">New request</h3>
         <hr>
-        <section ng-controller="ShowDetailController as ShowDetailCtrl" ng-view="detail in ShowDetailCtrl.details">
-          <div ng-repeat="detail in ShowDetailCtrl.details">
+        <section ng-controller="PendingController as PendingCtrl" ng-view="pending in PendingCtrl.details">
+          <div ng-repeat="pending in PendingCtrl.details">
             <p>
               <strong>Date: </strong>
-              {{ detail.date }}
+              {{ pending.date }}
             </p>
             <p>
               <strong>Category: </strong>
-              <a href="#" editable-text="detail.category">{{ detail.category || 'empty' }}</a>
+              <a href="#" editable-text="pending.category">{{ pending.category || 'empty' }}</a>
             </p>
             <p>
               <strong>Description: </strong>
-              <a href="#" editable-text="detail.description">{{ detail.description || 'empty' }}</a></p>
+              <a href="#" editable-text="pending.description">{{ pending.description || 'empty' }}</a></p>
 
             <hr>
             <h5 id="po_panel_h5">Property Info</h5>
             <hr>
             <p>
               <strong>Address: </strong>
-              <a href="#" editable-text="detail.address">{{ detail.address || 'empty' }}</a></p>
+              <a href="#" editable-text="pending.address">{{ pending.address || 'empty' }}</a></p>
             <hr>
             <h5 id="po_panel_h5">Tenant Info</h5>
             <hr>
             <p>
               <strong>Tenant Name: </strong>
-              <a href="#" editable-text="detail.tenant">{{ detail.tenant || 'empty' }}</a></p>
+              <a href="#" editable-text="pending.tenant">{{ pending.tenant || 'empty' }}</a></p>
             <p>
-              <strong>Phone: </strong>{{ detail.phone || 'empty' }}</p>
+              <strong>Phone: </strong>{{ pending.phone || 'empty' }}</p>
             <p>
-              <strong>Email: </strong>{{ detail.email || 'empty' }}</p>
+              <strong>Email: </strong>{{ pending.email || 'empty' }}</p>
               <hr>
               <h5 id="po_panel_h5">Description</h5>
               <hr>
             <hr>
             <h5 id="po_panel_h5">Comments</h5>
             <hr>
-            <p><a href="#" editable-textarea="detail.comments" e-rows="7" e-cols="30">
-              {{ detail.comments || 'empty' }}</a></p>
+            <p><a href="#" editable-textarea="pending.comments" e-rows="7" e-cols="30">
+              {{ pending.comments || 'empty' }}</a></p>
           </div>
         </section>
+
         <!-- Single Dropdown button -->
       <!--   <div class="btn-group">
         <button type="submit" class="btn blue dropdown-toggle" id="submit_mr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
