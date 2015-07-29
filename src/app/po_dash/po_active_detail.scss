@@ -7,10 +7,17 @@
 }
 #sub_nav_active {
   width: 100%;
-  padding: 15px 0;
+  padding: 5px 0;
   background-color: #EBFDD4;
 }
 
 #sub_nav_text p {
+  margin-top: 15px;
   display: inline-block;
+  text-align: center;
 }
+
+#po_panel_h5 {
+    text-align: left;
+    text-transform: uppercase;
+  }
