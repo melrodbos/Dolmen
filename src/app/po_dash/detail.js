@@ -1,17 +1,17 @@
-(function(){
+(function() {
   'use strict';
 
   var app = angular.module( 'dolmen' );
-  app.controller( 'ShowDetailController', function( $http, $scope ){
+  app.controller( 'ShowDetailController', function( $http, $scope ) {
     var list = this;
     list.details = [ ];
 
     $http.get( 'app/po_dash/request_detail.json' )
-    .then( function( response ){
-      console.log( response );
-      list.details = response.data;
-    });
-    app.run( function( editableOptions ){
+      .then( function( response ) {
+        console.log( response );
+        list.details = response.data;
+      });
+    app.run( function( editableOptions ) {
       // console.log( editableOptions );
       editableOptions.theme = 'bs3';
     });
@@ -25,7 +25,6 @@
       description: 'detail.description',
       Comments: 'detail.comments'
     };
-
   });
 })();
 
