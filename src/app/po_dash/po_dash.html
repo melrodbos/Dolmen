@@ -38,14 +38,14 @@
 <!-- Start of Panels -->
 <div id="panel_container">
 	<!-- Panel I -->
-	<!-- pending_panel controller here: -->
+	<!-- pending_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<div ng-repeat="maintenance in show.requests">
+					<div ng-repeat="maintenance in show.requests track by $index">
 						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
 						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
@@ -59,8 +59,8 @@
 		</div>
 	</section>
 	<!-- Panel II -->
-	<!-- active_panel controller here: -->
-	<section class="col-md-4">
+	<!-- active_panel.js controller here: -->
+	<section class="col-md-4" ng-controller="ActiveController as active" ng-view="texto in active.texts">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
@@ -107,7 +107,7 @@
 		</div>
 	</section>
 	<!-- Panel III -->
-<!--	completed_panel controller here: -->
+<!--	completed_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
