@@ -27,6 +27,7 @@
     </div>
 </header><!-- End of Header -->
 <!-- Start of Sub-Nav -->
+<div>
 <section id="sub_nav_active" ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.details">
   <div class="container" ng-repeat="pending in PendingCntrl.details">
     <div class="row" id="sub_nav_text">
@@ -99,26 +100,12 @@
         </select><strong>Status: </strong>{{pending.status}}
         <button type="submit" value="Submit" class="btn blue" id="submit_pdg">Save Changes</button>
         </section>
-
-        <!-- Single Dropdown button -->
-      <!--   <div class="btn-group">
-        <button type="submit" class="btn blue dropdown-toggle" id="submit_mr" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Progress
-          <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Progress</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-      </div> -->
-        <!-- <input type="checkbox" ng-model="" name="completed" ng-true-value="" ng-false-value="" ng-change="" /> Completed -->
       </div>
     </div>
   </section>
 </div>
+</div>
+
 <!-- Start of Footer -->
 <footer class="footer_wrap">
 	<div class="container">
