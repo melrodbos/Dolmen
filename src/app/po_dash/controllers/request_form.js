@@ -19,7 +19,9 @@
             address: self.address,
             phone: self.phone,
             description: self.description,
-            instructions: self.instructions
+            instructions: self.instructions,
+            status: self.status
+
           }).then(function(){
             $location.path('/dashboard');
           });
@@ -30,6 +32,7 @@
           self.phone = '';
           self.description = '';
           self.instructions = '';
+          self.status = ''
         };
 
       });
