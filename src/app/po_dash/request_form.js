@@ -7,7 +7,7 @@
 
         var self = this;
 
-        var firebase = new Firebase('https://dolmen.firebaseio.com');
+        var firebase = new Firebase('https://dolmen.firebaseio.com/dashboard');
 
         self.data = $firebaseArray(firebase);
         console.log(self.data);
