@@ -23,7 +23,8 @@
       phone: 'detail.phone',
       email: 'detail.email',
       description: 'detail.description',
-      Comments: 'detail.comments'
+      comments: 'detail.comments',
+      status: 'detail.status'
     };
   });
 })();
