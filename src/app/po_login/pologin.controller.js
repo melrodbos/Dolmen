@@ -5,7 +5,8 @@
   var app = angular.module( 'dolmen' );
       app.controller( 'PoLoginController', function() {
 
-      var ref = new Firebase( 'https://dolmen.firebaseio.com/dashboard' );
+      var newPropertyOwner = true;
+      var ref = new Firebase( 'https://dolmen.firebaseio.com/users' );
       var authData = ref.getAuth();
       if (authData) {
         console.log( 'Property Owner is in!', authData.uid );
@@ -24,6 +25,15 @@
           scope: 'email'
         });
       };
+
+      ref.onAuth( function() {
+        if ( authData && newPropertyOwner ) {
+          ref.child( 'users' ).child( authData.uid ).set({
+            provider: authData.provider,
+            name: authData.google.displayName
+          });
+        }
+      });
 
     }); //End of PoLoginController
 })(); //end of IIFE
