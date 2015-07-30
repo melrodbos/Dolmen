@@ -2,7 +2,7 @@
   'use strict';
 
   var app = angular.module( 'dolmen' );
-  app.controller( 'PendingController', function( $http, $scope, $firebaseArray ){
+  app.controller( 'PendingController', function( $http, $scope ){
 
     var display = this;
     display.details = [ ];
@@ -29,18 +29,18 @@
         status: 'detail.status'
       };
 
-      var firebase = new Firebase( 'https://dolmen.firebaseio.com');
-      self.data = $firebaseArray(firebase);
-      console.log(self.data);
-      self.submit = function() {
-        self.data.$add({
-          date: self.date,
-          category: self.category,
-          status: self.status,
-          
-
-        });
-      }
+      // var firebase = new Firebase( 'https://dolmen.firebaseio.com');
+      // self.data = $firebaseArray(firebase);
+      // console.log(self.data);
+      // self.submit = function() {
+      //   self.data.$add({
+      //     date: self.date,
+      //     category: self.category,
+      //     status: self.status
+      //   }).then( function(){
+      //     $location.path('/dashboard');
+      //   });
+      // };
 
   });
 })();
