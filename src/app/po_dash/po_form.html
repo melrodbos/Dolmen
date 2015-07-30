@@ -1,0 +1,86 @@
+<!-- Start of Header -->
+<header class="header_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="pull-left">
+				<div class="logo">
+					<!-- Font Awesome for logo placement -->
+					<a href="#/main"><i class="fa fa-comments-o"></i>
+            <h1>Dolmen</h1></a>
+				</div>
+			</div>
+			<div class="pull-right">
+				<!-- 	<div class="pull-left">
+			  <nav class="nav" id="site-navigation" class="main-navigation">
+			    <ul>
+			      <li><a href="#">Properties</a></li>
+			      <li><a href="#">Payments</a></li>
+			      <li><a href="#">Requests</a></li>
+			    </ul>
+			  </nav>
+			</div> -->
+				<div class="pull-right margin_right_10">
+					<div class="margint45">
+						<a href="#/dashboard" id="special_btn" class="btn blue_line">Dashboard</a>
+						<!-- <a href="#/main" id="special_btn" class="btn green_line">Logout</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+</header>
+<!-- End of header -->
+<section class="signup" id="signup">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Submit a Request</h2>
+			<!-- Start of Maintenance Request Form -->
+			<form class="po_new_req" class="form-group" id="mn_req_form" ng-controller="RequestController as request" ng-submit="request.submit()">
+				<!-- TODO: Add calendar option? -->
+				<label for="date">Date</label>
+				<input type="text" ng-model="request.date" class="form-control" name="date">
+				<label>Category</label>
+				<select type="text" ng-model="request.category" class="form-control" name="requests" required>
+					<option value="" default selected>Select a Category</option>
+					<option value="Appliance">Appliance</option>
+					<option value="Cabinets">Cabinets</option>
+					<option value="Electrical">Electrical</option>
+					<option value="Fence">Fence</option>
+					<option value="Flooring">Flooring</option>
+					<option value="Garage">Garage</option>
+					<option value="Hardware">Hardware</option>
+					<option value="HOA">HOA</option>
+					<option value="HVAC">HVAC</option>
+					<option value="Pest Control">Pest Control</option>
+					<option value="Plumbing">Plumbing</option>
+					<option value="Pool">Pool</option>
+					<option value="Roof">Roof</option>
+					<option value="Water Heater">Water Heater</option>
+				</select>
+				<label>Address</label>
+				<input type="text" ng-model="request.address" class="form-control" name="address" placeholder="1234 Utopia St. Orlando, FL 32801" required/>
+				<label>Phone</label>
+				<input type="text" ng-model="request.phone" class="form-control" name="phone" placeholder="555-555-5555" required/>
+				<label>Description</label>
+				<textarea ng-model="request.description" class="form-control" name="description" rows="8" cols="40" required></textarea>
+				<label>Access Instructions</label>
+				<input type="text" ng-model="request.instructions" class="form-control" name="instructions" required/>
+				<button type="submit" value="Submit" class="btn blue" id="submit_mr">Submit</button>
+			</form>
+			<!-- End of maintenance request form -->
+		</div>
+	</div>
+</section>
+<!-- Start of Footer -->
+<footer class="footer_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p style="color:#5F6360;">© Dolmen 2015</p>
+			</div>
+			<div class="col-md-6">
+				<a href="https://github.com/melrodbos/dolmen" target="_blank" style="display:block; text-align:right;"><i class="fa fa-github" style="font-size:30px; color: #5F6360;"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- End of footer -->

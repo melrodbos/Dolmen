@@ -1,0 +1,122 @@
+<!-- Start of header -->
+<header class="header_wrap">
+  <div class="container">
+    <div class="row">
+      <div class="pull-left">
+        <div class="logo">
+          <a href="#/main"><i class="fa fa-comments-o"></i>
+            <h1>Dolmen</h1></a>
+        </div>
+      </div>
+      <div class="pull-right">
+        <div class="pull-left">
+          <nav class="nav" id="site-navigation" class="main-navigation">
+            <ul>
+              <!-- <li><a href="#/active">Add Property</a></li> -->
+              <!-- <li><a href="#">Payments</a></li> -->
+              <!-- <li><a href="#">History</a></li> -->
+            </ul>
+          </nav>
+        </div>
+        <div class="pull-right margin_right_10">
+          <div class="margint45">
+            <a href="#/dashboard" id="special_btn" class="btn green_line">Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</header><!-- End of Header -->
+<!-- Start of Sub-Nav -->
+
+<section id="sub_nav_active" ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.details">
+  <div class="container" ng-repeat="pending in PendingCntrl.details">
+    <div class="row" id="sub_nav_text">
+      <p class="col-sm-4">
+        <strong>Request Submitted on: </strong>{{ pending.date }}
+      </p>
+      <p class="col-sm-4">
+        <strong>
+          Category:
+        </strong>{{ pending.category }}
+      </p>
+      <p class="col-sm-4">
+        <strong>Status: </strong>{{ pending.status }}
+      </p>
+    </div>
+  </div>
+</section><!-- End of Sub-Nav -->
+
+<!-- Start of Detailed Request -->
+<div id="active_detail">
+  <section class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3 id="po_panel_h3">New request</h3>
+        <hr>
+        <section ng-controller="PendingController as PendingCtrl" ng-view="pending in PendingCtrl.details" ng-submit="request.submit()">
+          <div ng-repeat="pending in PendingCtrl.details">
+            <p>
+              <strong>Date: </strong>
+              {{ pending.date }}
+            </p>
+            <p>
+              <strong>Category: </strong>
+              <a href="#" editable-text="pending.category">{{ pending.category || 'empty' }}</a>
+            </p>
+
+            <hr>
+            <h5 id="po_panel_h5">Property Info</h5>
+            <hr>
+            <p>
+              <strong>Address: </strong>
+              <a href="#" editable-text="pending.address">{{ pending.address || 'empty' }}</a></p>
+            <hr>
+            <h5 id="po_panel_h5">Tenant Info</h5>
+            <hr>
+            <p>
+              <strong>Tenant Name: </strong>
+              <a href="#" editable-text="pending.tenant">{{ pending.tenant || 'empty' }}</a></p>
+            <p>
+              <strong>Phone: </strong>{{ pending.phone || 'empty' }}</p>
+            <p>
+              <strong>Email: </strong>{{ pending.email || 'empty' }}</p>
+              <hr>
+              <h5 id="po_panel_h5">Description</h5>
+              <hr>
+              <p>
+                <strong>Description: </strong>
+                <a href="#" editable-text="pending.description">{{ pending.description || 'empty' }}</a></p>
+            <hr>
+            <h5 id="po_panel_h5">Comments</h5>
+            <hr>
+            <p><a href="#" editable-textarea="pending.comments" e-rows="7" e-cols="30">
+              {{ pending.comments || 'empty' }}</a></p>
+          </div>
+
+        <select type="text" ng-model="pending.status" class="form-control" name="pending" required><option value="" default selected>Select Status</option>
+          <option value="Active">Active</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select><strong>Status: </strong>{{pending.status}}
+        <button type="submit" value="Submit" class="btn blue" id="submit_pdg">Save Changes</button>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- Start of Footer -->
+<footer class="footer_wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p style="color:#5F6360;">© Dolmen 2015</p>
+			</div>
+			<div class="col-md-6">
+				<a href="https://github.com/melrodbos/dolmen" target="_blank" style="display:block; text-align:right;"><i class="fa fa-github" style="font-size:30px; color: #5F6360;"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- End of footer -->

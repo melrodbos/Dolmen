@@ -21,8 +21,8 @@
           </div>
           <div ng-controller="PoLoginController as PoLogin" class="pull-right margin_right_10">
             <div class="margint45">
-              <a href="#/dashboard" id="special_btn" class="btn green_line" ng-click="PoLogin.login()">Login</a>
-              <a href="/" id="special_btn" class="btn blue_line" ng-click="">Logout</a>
+              <a href="#/dashboard" class="btn green_line" ng-click="PoLogin.login()" id="special_btn">Login</a>
+
             </div>
           </div>
         </div>
@@ -36,8 +36,10 @@
         <div class="intro_copy">
           <h2>Manage, track and create maintenance requests.</h2>
           <span class="divider"></span>
-          <p>An app for Property Owners and their tenants.</p>
-          <a href="#/features" class="btn blue">Learn More</a>
+          <p>An app for Property Owners.</p>
+          <div>
+          <a href="#/dashboard" class="btn blue">Learn More</a>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@
   <section class="how" id="process">
     <div class="container">
       <div class="row">
-        <h2>How It Works</h2>
+        <h2>Keep your properties up to date.</h2>
       </div>
 
     </div>
@@ -64,25 +66,25 @@
           <i class="fa fa-home"></i>
           <h3>Add / Remove Properties</h3>
           <span class="divider green_div"></span>
-          <p>Baboiii underweaaar tatata bala tu uuuhhh hana dul sae la bodaaa aaaaaah. Bappleees daa chasy jiji underweaaar. Aaaaaah jiji gelatooo hana dul sae. Hahaha daa hana dul sae tulaliloo. Chasy tulaliloo tank yuuu!</p>
+          <p>dolmen allows you to add and create detailed profiles for one or multiple properties. You can also conveniently edit and remove a property in one click.</p>
         </div>
         <div class="col-md-3">
           <i class="fa fa-user"></i>
           <h3>Add / Remove Tenants</h3>
           <span class="divider green_div"></span>
-          <p>Minions ipsum gelatooo hahaha bananaaaa wiiiii aaaaaah hana dul sae. Bee do bee do bee do la bodaaa underweaaar aaaaaah poopayee. Underweaaar tulaliloo po kass tulaliloo ti aamoo! Aaaaaah tatata bala tu pepete underweaaar.</p>
+          <p>Add one or multiple tenants per property. Edit tenant's name and contact information. Remove tenants from a listing when the lease is up.</p>
         </div>
         <div class="col-md-3">
           <i class="fa fa-envelope-o"></i>
-          <h3>Open / Close Requests</h3>
+          <h3>Manage Requests</h3>
           <span class="divider green_div"></span>
-          <p>Gelatooo ti aamoo! Jeje ti aamoo! Jeje wiiiii gelatooo para tú. Me want bananaaa! jeje chasy bee do bee do bee do ti aamoo! Jeje bee do bee do bee do. Po kass bananaaaa chasy para tú pepete poopayee po kass.</p>
+          <p>Keep maintenance requests organized in different panels. Distribute requests by date created. Active requests panel will show a chronological list of editable requests. Add your seal of approval by checking off a completed request.</p>
         </div>
         <div class="col-md-3">
           <i class="fa fa-file-o"></i>
-          <h3>Manage Requests</h3>
+          <h3>Request Reports</h3>
           <span class="divider green_div"></span>
-          <p>Po kass belloo! But daa hahaha belloo! Bee do bee do bee do poulet tikka masala. Tank yuuu! bappleees belloo! Uuuhhh hana dul sae wiiiii.</p>
+          <p>Generate reports based on maintenance requests history.</p>
         </div>
       </div>
     </div>
@@ -92,7 +94,7 @@
   <section class="signup" id="signup">
     <div class="container">
       <div class="row">
-        <h2>Sign Up Today</h2>
+        <h2>Keep track of your requests with <span style="color:#7dbfbd;">dolmen</span>.</h2>
       </div>
     </div>
   </section>
@@ -102,7 +104,12 @@
 <footer class="footer_wrap">
   <div class="container">
     <div class="row">
-      <p>© Dolmen 2015</p>
+      <div class="col-md-6">
+				<p style="color:#5F6360;">© Dolmen 2015</p>
+			</div>
+			<div class="col-md-6">
+				<a href="https://github.com/melrodbos/dolmen" target="_blank" style="display:block; text-align:right;"><i class="fa fa-github" style="font-size:30px; color: #5F6360;"></i></a>
+			</div>
     </div>
   </div>
 </footer>

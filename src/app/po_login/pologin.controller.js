@@ -1,16 +1,35 @@
-/* global angular */
-;(function() {
+/* global angular Firebase */
+( function() {
   'use strict';
-//Start of PoLoginController, remember to include dolmen.services as a dependency:
-  var app = angular.module('dolmen.login', ['dolmen.services']);
-  app.controller('PoLoginController', [
-    '$scope',
-    'Auth',
-    function($scope, Auth) {
-      $scope.auth = Auth;
-      $scope.user = $scope.auth.$getAuth();
 
-  }
-  ]);
+  var app = angular.module( 'dolmen' );
+      app.controller( 'PoLoginController', function() {
 
-})();
+      var ref = new Firebase( 'https://dolmen.firebaseio.com/dashboard' );
+      var authData = ref.getAuth();
+      if (authData) {
+        console.log( 'Property Owner is in!', authData.uid );
+      }
+
+      this.login = function( ) {
+        ref.authWithOAuthRedirect( 'google', function( error ) {
+          if ( error ) {
+            console.log( "Failed!", error );
+          } else {
+            console.log( "Way to go!", authData );
+            //Totally not getting here EVAH'
+          }
+        }, {
+          remember: 'sessionOnly',
+          scope: 'email'
+        });
+      };
+      // this.logout = function( ) {
+      //   if ( logout ) {
+      //     console.log( "Out the door..." )
+      //   }
+      //   ref.unauth( );
+      // };
+
+    }); //End of PoLoginController
+})(); //end of IIFE

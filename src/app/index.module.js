@@ -3,15 +3,17 @@
 
   angular
     .module('dolmen', [
-      //'ngAnimate',
+      'ngAnimate',
       'ngCookies',
       'ngTouch',
       'ngSanitize',
       'restangular',
       'ui.router',
       'ui.bootstrap',
-      'dolmen.services',
-      'dolmen.login',
+      'firebase',
+      'xeditable'
+      //'dolmen.services',
+      //'dolmen.login',
     ]
   );
 
