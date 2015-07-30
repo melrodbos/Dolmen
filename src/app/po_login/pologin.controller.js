@@ -3,7 +3,7 @@
   'use strict';
 
   var app = angular.module( 'dolmen' );
-      app.controller( 'PoLoginController', function( ) {
+      app.controller( 'PoLoginController', function() {
 
       var ref = new Firebase( 'https://dolmen.firebaseio.com/dashboard' );
       var authData = ref.getAuth();
