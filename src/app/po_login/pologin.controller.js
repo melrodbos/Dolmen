@@ -24,12 +24,6 @@
           scope: 'email'
         });
       };
-      // this.logout = function( ) {
-      //   if ( logout ) {
-      //     console.log( "Out the door..." )
-      //   }
-      //   ref.unauth( );
-      // };
 
     }); //End of PoLoginController
 })(); //end of IIFE
