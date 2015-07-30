@@ -1,7 +1,7 @@
 
-(function(){
+( function(){
   'use strict';
-    var app = angular.module('dolmen');
+    var app = angular.module( 'dolmen' );
 
       app.controller('ShowController', function( $http, $scope ) {
 
@@ -16,7 +16,7 @@
         };
         $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
         .then( function( response ){
-          console.log(response.data);
+          console.log( response.data );
           show.requests = response.data;
         });
       });
