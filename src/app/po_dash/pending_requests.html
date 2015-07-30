@@ -27,7 +27,7 @@
     </div>
 </header><!-- End of Header -->
 <!-- Start of Sub-Nav -->
-<div>
+
 <section id="sub_nav_active" ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.details">
   <div class="container" ng-repeat="pending in PendingCntrl.details">
     <div class="row" id="sub_nav_text">
@@ -36,11 +36,11 @@
       </p>
       <p class="col-sm-4">
         <strong>
-          Category: {{ pending.category }}
-        </strong>
+          Category:
+        </strong>{{ pending.category }}
       </p>
       <p class="col-sm-4">
-        <strong>Status: {{ pending.status }}</strong>
+        <strong>Status: </strong>{{ pending.status }}
       </p>
     </div>
   </div>
