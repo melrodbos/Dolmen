@@ -5,12 +5,12 @@
   app.controller( 'PendingController', function( $http, $scope ){
 
     var display = this;
-    display.details = [ ];
+    display.detalles = [ ];
 
-    $http.get( 'app/po_dash/request_2.json' )
-      .then( function( response ){
-        console.log( response );
-        display.details = response.data;
+    $http.get( 'https://dolmen.firebaseio.com/' + 'json' )
+      .then( function( responses ){
+        console.log( responses );
+        display.detalles = responses.data;
       });
 
       app.run( function( editableOptions ){
@@ -18,15 +18,15 @@
       });
 
       $scope.user = {
-        date: 'detail.date',
-        category: 'detail.category',
-        address: 'detail.address',
-        tenant: 'detail.tenant',
-        phone: 'detail.phone',
-        email: 'detail.email',
-        description: 'detail.description',
-        comments: 'detail.comments',
-        status: 'detail.status'
+          date: 'detalle.date',
+          category: 'detalle.category',
+          address: 'detalle.address',
+          tenant: 'detalle.tenant',
+          phone: 'detalle.phone',
+          email: 'detalle.email',
+          description: 'detalle.description',
+          comments: 'detalle.comments',
+          status: 'detalle.status'
       };
 
       // var firebase = new Firebase( 'https://dolmen.firebaseio.com');
