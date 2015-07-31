@@ -1,16 +1,16 @@
 
-;(function(){
+;( function() {
   'use strict';
-    var app = angular.module('dolmen');
+    var app = angular.module( 'dolmen' );
 
-      app.controller('RequestController', function($firebaseArray, $location) {
+      app.controller( 'RequestController', function( $firebaseArray, $location ) {
 
         var self = this;
 
-        var firebase = new Firebase('https://dolmen.firebaseio.com/dashboard');
+        var firebase = new Firebase( 'https://dolmen.firebaseio.com/dasboard' );
 
-        self.data = $firebaseArray(firebase);
-        console.log(self.data);
+        self.data = $firebaseArray( firebase );
+        console.log( self.data );
 
         self.submit = function() {
           self.data.$add({
@@ -22,8 +22,8 @@
             instructions: self.instructions,
             status: self.status
 
-          }).then(function(){
-            $location.path('/dashboard');
+          }).then( function() {
+            $location.path( '/dashboard' );
           });
           // the following will clear the fields once the request is submited:
           self.date = '';
@@ -32,7 +32,7 @@
           self.phone = '';
           self.description = '';
           self.instructions = '';
-          self.status = ''
+          self.status = '';
         };
 
       });
