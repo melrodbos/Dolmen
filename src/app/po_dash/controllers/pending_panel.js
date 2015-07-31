@@ -15,9 +15,9 @@
           this.request = { };
         };
         $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
-        .then( function( response ){
-          console.log( response.data );
-          show.requests = response.data;
+        .then( function( responses ){
+          console.log( responses.data );
+          show.requests = responses.data;
         });
       });
     })();
