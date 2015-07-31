@@ -15,6 +15,5 @@
       //'dolmen.services',
       //'dolmen.login',
     ]
-  );
-
+  ).constant( 'FIREBASE_APP', 'https://dolmen.firebase.io.com/users' );
 })();
