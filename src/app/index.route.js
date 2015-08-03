@@ -20,8 +20,8 @@
     .state('main', {
       url: '/',
       templateUrl: 'app/main/main.html',
-      // controller: 'LoginController',
-      // controllerAs: 'LoginCtrl',
+      controller: 'LoginController',
+      controllerAs: 'LoginCtrl',
     })
 
     .state('features', {
