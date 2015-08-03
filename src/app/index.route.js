@@ -10,18 +10,18 @@
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'app/main/main.html',
-      controller: 'MainController',
-      controllerAs: 'main'
-    })
+    // .state('home', {
+    //   url: '/',
+    //   templateUrl: 'app/main/main.html',
+    //   // controller: 'MainController',
+    //   // controllerAs: 'MainCtrl'
+    // })
 
     .state('main', {
       url: '/',
       templateUrl: 'app/main/main.html',
-      controller: 'PoLoginController',
-      controllerAs: 'PoLogin',
+      controller: 'LoginController',
+      controllerAs: 'LoginCtrl',
     })
 
     .state('features', {
@@ -29,7 +29,7 @@
       templateUrl: 'app/features/features.html',
     })
 
-    .state('pending_request', {
+    .state('pending_requests', {
       url: '/pending',
       templateUrl: 'app/po_dash/pending_requests.html',
       controller: 'PendingController',
@@ -39,13 +39,15 @@
     .state('po_dash', {
       url: '/dashboard',
       templateUrl: 'app/po_dash/po_dash.html',
+      // controller: 'DashboardController'
+      // controllerAs: 'DashCtrl',
     })
 
     .state('po_form', {
       url: '/requests',
       templateUrl: 'app/po_dash/po_form.html',
-      controller: 'RequestController',
-      controllerAs: 'request',
+      // controller: 'RequestController',
+      // controllerAs: 'request',
     })
 
     .state('po_active', {
