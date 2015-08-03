@@ -20,16 +20,16 @@
 					</nav>
 				</div>
 				<!-- logout Controller here: -->
-				<div ng-controller="PoLogoutController as PoLogout" class="pull-right margin_right_10">
+				<div class="pull-right margin_right_10">
 					<div class="margint45">
 						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
-						<a href="#/" id="special_btn" class="btn blue_line" ng-click="PoLogout.logout()">Logout</a>
+						<a href="#/" id="special_btn" class="btn blue_line">Logout</a>
 					</div>
 				</div>
 			</div>
 		</div>
 </header><!-- End of Header -->
-
+<!-- Create Request Controller -->
 <section class="footer_wrap" id="sub_nav">
 	<div class="btn.green_line">
 	<a href="#/requests" id="special_btn" class="btn green_line">Create a New Request</a>
@@ -45,7 +45,7 @@
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<div ng-repeat="maintenance in show.requests">
+					<div ng-repeat="maintenance in show.requests track by $index">
 						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
 						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
