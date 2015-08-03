@@ -7,7 +7,7 @@
 
         var self = this;
 
-        var firebase = new Firebase( 'https://dolmen.firebaseio.com/dasboard' );
+        var firebase = new Firebase( 'https://dolmen.firebaseio.com/dashboard' );
 
         self.data = $firebaseArray( firebase );
         console.log( self.data );
@@ -20,10 +20,13 @@
             phone: self.phone,
             description: self.description,
             instructions: self.instructions,
-            status: self.status
+            // status: self.status
 
           }).then( function() {
+            // document.getElementById( 'submit_mr' ).addEventListener( 'click', function(){
             $location.path( '/dashboard' );
+            // });
+
           });
           // the following will clear the fields once the request is submited:
           self.date = '';
@@ -32,7 +35,7 @@
           self.phone = '';
           self.description = '';
           self.instructions = '';
-          self.status = '';
+          // self.status = '';
         };
 
       });
