@@ -14,7 +14,7 @@
           info.requests.push( this.request );
           this.request = { };
         };
-        $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
+        $http.get( 'https://dolmen.firebaseio.com/' + '.json')
         .then( function( responses ){
           console.log( responses.data );
           show.requests = responses.data;
