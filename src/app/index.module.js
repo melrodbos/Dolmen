@@ -12,7 +12,6 @@
       'ui.bootstrap',
       'firebase',
       'xeditable',
-      'dolmen.auth'
       // 'dolmen.services',
     ]
     //

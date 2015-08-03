@@ -8,12 +8,66 @@
   app.service('authService', function( $firebase, FBDolmen ){
     var ref = new Firebase( FBDolmen );
 
-    this.owner = ref.getAuth();
+    this.user = ref.getAuth();
 
-    var saveNewOwner = function(){
-      
+    var saveNewUser = function( userObj ){
+      ref.child( 'users' ).child( userObj.id ).set( userObj );
     };
-
+    // Login method:
+    this.isLoggedIn = function(){
+      // turn it into a boolean:
+      return !!ref.getAuth();
+    };
+    this.loginWithPW = function( userObj, cb, cbOnReg ){
+      ref.authWithPassword( userObj, function( error, authData ){
+        if( error ){
+          console.log( 'No way Jose!' );
+        } else {
+          authData.email = userObj.email;
+          this.user = authData;
+          cb( authdata );
+          cbOnReg && cbOnReg( true );
+        }
+      }.bind( this ));
+    };
+    // Login with Popup:
+    this.loginWithOAuthPopup = function( service, cb ){
+      ref.authWithOAuthPopup( service, function( error, authData ){
+        if( error ) {
+          console.log( 'Error on login:', error.message );
+        } else {
+          addNewUserToFB( authData );
+          this.cachedUser = authData;
+        }
+      }.bind( this ));
+    };
+    // User method:
+    this.createUser = function( user, cb ){
+      ref.createUser( user, function( error, userData ){
+        if ( error ) {
+          switch ( error.code ) {
+            case "EMAIL_TAKEN":
+              console.log( "the new user account cannot be created because...");
+              break;
+            case "INVALID_EMAIL":
+              console.log( "the specified email is not a valid email.");
+              break;
+            default:
+              console.log( "Error creating user:", error);
+          }
+        } else {
+          this.loginWithPW( user, function(){
+            saveNewUser( authData );
+          }, cb );
+        }
+      }.bind( this ));
+    };
+    // Logout method:
+    this.logout = function(){
+      ref.unauth();
+      this.cachedUser = null;
+      return true;
+    }.state.go('/');
   });
 });
 
