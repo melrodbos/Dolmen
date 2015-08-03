@@ -45,7 +45,7 @@
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<div ng-repeat="maintenance in show.requests track by $index">
+					<div ng-repeat="maintenance in show.requests">
 						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
 						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
