@@ -11,9 +11,10 @@
       'ui.router',
       'ui.bootstrap',
       'firebase',
-      'xeditable'
-      //'dolmen.services',
-      //'dolmen.login',
+      'xeditable',
+      'dolmen.auth'
+      // 'dolmen.services',
     ]
-  ).constant( 'FIREBASE_APP', 'https://dolmen.firebase.io.com/users' );
+    //
+  ).constant( 'FBDolmen', 'https://dolmen.firebaseio.com/owners');
 })();
