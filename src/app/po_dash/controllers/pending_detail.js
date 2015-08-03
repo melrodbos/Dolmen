@@ -7,7 +7,7 @@
     var display = this;
     display.detalles = [ ];
 
-    $http.get( 'https://dolmen.firebaseio.com/' + 'json' )
+    $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
       .then( function( responses ){
         console.log( responses );
         display.detalles = responses.data;
