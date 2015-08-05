@@ -21,9 +21,9 @@
 				</div>
 				<!-- logout Controller here: -->
 				<div class="pull-right margin_right_10">
-					<div class="margint45">
+					<div class="margint45" ng-controller="LogoutController as LogoutCtrl">
 						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
-						<a href="#/" id="special_btn" class="btn blue_line">Logout</a>
+						<a ng-click="LogoutCtrl.logout()" href="#/" id="special_btn" class="btn blue_line">Logout</a>
 					</div>
 				</div>
 			</div>
