@@ -1,65 +1,52 @@
-
 (function() {
   'use strict';
 
- angular.module('dolmen')
-  .config(routeConfig);
+ angular.module('dolmen', [
+   'ui.router',
+   'firebase',
+   'ui.bootstrap',
+   'xeditable' ])
+  .config( function ( $stateProvider, $urlRouterProvider){
+    $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainController',
+        controllerAs: 'MainCtrl'
+      })
 
-  /** @ngInject */
-  function routeConfig($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/');
+      .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/po_dash/po_dash.html'
+        // controller: 'DashboardController',
+        // controllerAs: 'dashboard'
+      })
 
-  $stateProvider
-    // .state('home', {
-    //   url: '/',
-    //   templateUrl: 'app/main/main.html',
-    //   // controller: 'MainController',
-    //   // controllerAs: 'MainCtrl'
-    // })
+      .state('pending', {
+        url: '/pending',
+        templateUrl: 'app/po_dash/pending_requests.html',
+        controller: 'PendingController',
+        controllerAs: 'pending'
+      })
 
-    .state('main', {
-      url: '/',
-      templateUrl: 'app/main/main.html',
-      controller: 'LoginController',
-      controllerAs: 'LoginCtrl',
-    })
+      .state('po_form', {
+        url: '/requests',
+        templateUrl: 'app/po_dash/po_form.html'
+        // controller: 'RequestController',
+        // controllerAs: 'request',
+      })
 
-    .state('features', {
-      url: '/features',
-      templateUrl: 'app/features/features.html',
-    })
+      .state('po_active', {
+        url: '/active',
+        templateUrl: 'app/po_dash/po_active_details.html'
+      })
 
-    .state('pending_requests', {
-      url: '/pending',
-      templateUrl: 'app/po_dash/pending_requests.html',
-      controller: 'PendingController',
-      controllerAs: 'pending',
-    })
+      .state('properties', {
+        url: '/properties',
+        templateUrl: 'app/po_dash/po_properties.html'
+      });
 
-    .state('po_dash', {
-      url: '/dashboard',
-      templateUrl: 'app/po_dash/po_dash.html',
-      // controller: 'DashboardController'
-      // controllerAs: 'DashCtrl',
-    })
+      $urlRouterProvider.otherwise('/');
 
-    .state('po_form', {
-      url: '/requests',
-      templateUrl: 'app/po_dash/po_form.html',
-      // controller: 'RequestController',
-      // controllerAs: 'request',
-    })
-
-    .state('po_active', {
-      url: '/active',
-      templateUrl: 'app/po_dash/po_active_details.html',
-    })
-
-    .state('properties', {
-      url: '/properties',
-      templateUrl: 'app/po_dash/po_properties.html'
-    });
-
-}//End of routeConfig
-
-})();
+}); //End of routeConfig
+})(); //End of IIFE
