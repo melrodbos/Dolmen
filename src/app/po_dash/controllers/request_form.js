@@ -3,11 +3,13 @@
   'use strict';
     var app = angular.module( 'dolmen' );
 
-      app.controller( 'RequestController', function( $firebaseArray, $location ) {
+      app.controller( 'RequestController', function( FBDolmen,  $firebaseArray, $location ) {
 
         var self = this;
 
-        var firebase = new Firebase( 'https://dolmen.firebaseio.com/dashboard' );
+        var firebase = new Firebase( FBDolmen + '/owners' + '.json' );
+        var authData = firebase.getAuth();
+        var list = firebase.child( authData.uid + '/pending' );
 
         self.data = $firebaseArray( firebase );
         console.log( self.data );
@@ -20,7 +22,7 @@
             phone: self.phone,
             description: self.description,
             instructions: self.instructions,
-            // status: self.status
+            status: self.status
 
           }).then( function() {
             // document.getElementById( 'submit_mr' ).addEventListener( 'click', function(){
@@ -35,7 +37,7 @@
           self.phone = '';
           self.description = '';
           self.instructions = '';
-          // self.status = '';
+          self.status = '';
         };
 
       });
