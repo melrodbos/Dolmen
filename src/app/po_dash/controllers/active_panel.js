@@ -2,19 +2,19 @@
   'use strict';
 
   var app = angular.module( 'dolmen' );
-  app.controller( 'ActiveController', function ( $http, $scope ){
+  app.controller( 'ActiveController', function ( FBDolmen, $http ){
 
-    var give = this;
-    this.texto = { };
+    var active = this;
+    active.texto = [ ];
 
-    this.addText = function ( activeReq ) {
+    this.addTexto = function ( activeReq ) {
       activeReq.texts.push( this.texto );
       this.texto = { };
     };
-    $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
+    $http.get( FBDolmen + '/owners' + '/requests' + '.json' )
     .then( function( respuesta ){
+      active.texts = respuesta.data;
       console.log(respuesta.data);
-      give.texts = respuesta.data;
     });
   });
 
