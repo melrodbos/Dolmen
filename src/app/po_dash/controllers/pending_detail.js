@@ -2,12 +2,12 @@
   'use strict';
 
   var app = angular.module( 'dolmen' );
-  app.controller( 'PendingController', function( $firebaseArray, $location, $http, $scope ){
+  app.controller( 'PendingController', function( FBDolmen, $firebaseArray, $location, $http, $scope ){
 
     var display = this;
     display.detalles = [ ];
 
-    $http.get( 'https://dolmen.firebaseio.com/' + '.json' )
+    $http.get( FBDolmen + '/owners' + '/owner:id' + '.json' )
       .then( function( responses ){
         console.log( responses );
         display.detalles = responses.data;
@@ -29,7 +29,7 @@
           status: 'detalle.status'
       };
 
-      var firebaseOne = new Firebase( 'https://dolmen.firebaseio.com/' );
+      var firebaseOne = new Firebase( FBDolmen + '/owners' + '.json' );
 
       display.data = $firebaseArray( firebaseOne );
       console.log( display.data );
