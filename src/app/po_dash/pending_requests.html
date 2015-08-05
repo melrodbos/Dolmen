@@ -27,9 +27,10 @@
     </div>
 </header><!-- End of Header -->
 <!-- Start of Sub-Nav -->
+<div ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.detalles">
 
-<section id="sub_nav_active" ng-controller="PendingController as PendingCntrl" ng-view="pending in PendingCntrl.details">
-  <div class="container" ng-repeat="pending in PendingCntrl.details">
+<section id="sub_nav_active">
+  <div class="container">
     <div class="row" id="sub_nav_text">
       <p class="col-sm-4">
         <strong>Request Submitted on: </strong>{{ pending.date }}
@@ -53,8 +54,8 @@
       <div class="panel-body">
         <h3 id="po_panel_h3">New request</h3>
         <hr>
-        <section ng-controller="PendingController as PendingCtrl" ng-view="pending in PendingCtrl.details" ng-submit="request.submit()">
-          <div ng-repeat="pending in PendingCtrl.details">
+        <section>
+          <div>
             <p>
               <strong>Date: </strong>
               {{ pending.date }}
@@ -91,7 +92,7 @@
             <hr>
             <p><a href="#" editable-textarea="pending.comments" e-rows="7" e-cols="30">
               {{ pending.comments || 'empty' }}</a></p>
-          </div>
+
 
         <select type="text" ng-model="pending.status" class="form-control" name="pending" required><option value="" default selected>Select Status</option>
           <option value="Active">Active</option>
@@ -99,12 +100,14 @@
           <option value="Completed">Completed</option>
         </select><strong>Status: </strong>{{pending.status}}
         <button type="submit" value="Submit" class="btn blue" id="submit_pdg">Save Changes</button>
+        </div>
         </section>
       </div>
     </div>
   </section>
 </div>
 </div>
+
 
 <!-- Start of Footer -->
 <footer class="footer_wrap">

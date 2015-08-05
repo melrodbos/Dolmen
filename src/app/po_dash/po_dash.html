@@ -19,17 +19,17 @@
 					</ul> -->
 					</nav>
 				</div>
-
-				<div ng-controller="PoLogoutController as PoLogout" class="pull-right margin_right_10">
-					<div class="margint45">
+				<!-- logout Controller here: -->
+				<div class="pull-right margin_right_10">
+					<div class="margint45" ng-controller="LogoutController as LogoutCtrl">
 						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
-						<a href="#/" id="special_btn" class="btn blue_line" ng-click="PoLogout.logout()">Logout</a>
+						<a ng-click="LogoutCtrl.logout()" href="#/" id="special_btn" class="btn blue_line">Logout</a>
 					</div>
 				</div>
 			</div>
 		</div>
 </header><!-- End of Header -->
-
+<!-- Create Request Controller -->
 <section class="footer_wrap" id="sub_nav">
 	<div class="btn.green_line">
 	<a href="#/requests" id="special_btn" class="btn green_line">Create a New Request</a>
@@ -38,13 +38,14 @@
 <!-- Start of Panels -->
 <div id="panel_container">
 	<!-- Panel I -->
+	<!-- pending_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
 				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<div ng-repeat="maintenance in show.requests">
+					<div ng-repeat="maintenance in show.requests track by $index">
 						<p><strong>Date: </strong>{{maintenance.date}}</p>
 						<p><strong>Category: </strong> {{maintenance.category}}</p>
 						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
@@ -58,7 +59,8 @@
 		</div>
 	</section>
 	<!-- Panel II -->
-	<section class="col-md-4">
+	<!-- active_panel.js controller here: -->
+	<section class="col-md-4" ng-controller="ActiveController as active" ng-view="texto in active.texts">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
@@ -105,6 +107,7 @@
 		</div>
 	</section>
 	<!-- Panel III -->
+<!--	completed_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
