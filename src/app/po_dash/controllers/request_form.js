@@ -1,45 +1,25 @@
-
-;( function() {
+(function(){
   'use strict';
-    var app = angular.module( 'dolmen' );
-
-      app.controller( 'RequestController', function( FBDolmen,  $firebaseArray, $location ) {
-
-        var self = this;
-
-        var firebase = new Firebase( FBDolmen + '/owners' + '.json' );
-        var authData = firebase.getAuth();
-        var list = firebase.child( authData.uid + '/pending' );
-
-        self.data = $firebaseArray( firebase );
-        console.log( self.data );
-
-        self.submit = function() {
-          self.data.$add({
-            date: self.date,
-            category: self.category,
-            address: self.address,
-            phone: self.phone,
-            description: self.description,
-            instructions: self.instructions,
-            status: self.status
-
-          }).then( function() {
-            // document.getElementById( 'submit_mr' ).addEventListener( 'click', function(){
-            $location.path( '/dashboard' );
-            // });
-
-          });
-          // the following will clear the fields once the request is submited:
-          self.date = '';
-          self.category = '';
-          self.address = '';
-          self.phone = '';
-          self.description = '';
-          self.instructions = '';
-          self.status = '';
-        };
-
-      });
-
+  var app = angular.module( 'dolmen.requestForm',[ 'dolmen.services', 'ngStorage' ] );
+  app.controller( 'RequestController', [
+    '$scope',
+    'Maintenance',
+    '$sessionStorage',
+    function( $scope, Maintenance, $sessionStorage ){
+      var self = this;
+      self.submit = function() {
+        Maintenance.addRequest({
+          date: self.date,
+          dateComplete: 'tbd',
+          category: self.category,
+          address: self.address,
+          phone: self.phone,
+          description: self.description,
+          instructions: self.instructions,
+          status: self.status,
+          oid: $sessionStorage.ownerSession.google.id
+        });
+        
+    };
+  }]);
 })();
