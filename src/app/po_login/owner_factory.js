@@ -10,7 +10,7 @@
 
     return {
       googleLogin: function(){
-        authObj.$authWithOAuthPopup("google").then( function( authData ) {
+        authObj.$authWithOAuthPopup( "google" ).then( function( authData ) {
           getOwner();
           $state.go( 'dashboard' );
         }).catch( function( error ) {
