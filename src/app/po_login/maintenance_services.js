@@ -35,7 +35,7 @@
       req.tenant = req.tenant;
       req.phone = req.phone;
       return req.$save();
-    }
+    };
     return maintObj;
   }]);
 
