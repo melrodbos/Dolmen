@@ -9,7 +9,8 @@
    'ngStorage',
    'dolmen.services',
    'dolmen.dashboard',
-   'dolmen.requestForm'
+   'dolmen.requestForm',
+   'dolmen.scroll',
   ])
   .config( function ( $stateProvider, $urlRouterProvider){
     $stateProvider
