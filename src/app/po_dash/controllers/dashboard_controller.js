@@ -10,7 +10,7 @@
     $rootScope.$on( 'requestsRetrieved', function(){
       $timeout( function(){
         self.requests = Maintenance.requests;
-        self.requests = $.map(self.requests, function(value, index) {
+        self.requests = $.map( self.requests, function( value, index ) {
             value.dbId = index;
             return [value];
         });
