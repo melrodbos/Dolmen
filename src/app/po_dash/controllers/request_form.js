@@ -19,7 +19,21 @@
           status: self.status,
           oid: $sessionStorage.ownerSession.google.id
         });
-        
+      //   .then( function() {
+      //       // document.getElementById( 'submit_mr' ).addEventListener(
+      //       $state.go( 'dashboard' );
+      //       // });
+       //
+      //     });
+      //     // the following will clear the fields once the request is su
+      //     self.date = '';
+      //     self.category = '';
+      //     self.address = '';
+      //     self.phone = '';
+      //     self.description = '';
+      //     self.instructions = '';
+      //     self.status = '';
+      //  };
     };
   }]);
 })();
