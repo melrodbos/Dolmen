@@ -14,8 +14,8 @@
   ])
   .config( function ( $stateProvider, $urlRouterProvider){
     $stateProvider
-      .state('home', {
-        url: '/',
+      .state('main', {
+        url: '/main',
         templateUrl: 'app/main/main.html',
         data: {
           needsAuth: false
