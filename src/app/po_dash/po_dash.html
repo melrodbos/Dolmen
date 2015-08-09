@@ -52,7 +52,7 @@
 						<p><strong>Phone: </strong> {{request.phone}}</p>
 						<p><strong>Description: </strong> {{request.description}}</p>
 						<p><strong>Access Instructions: </strong> {{request.instructions}}</p>
-						<p><strong>Status: </strong>{{request.status}}</p>
+						<!-- <p><strong>Status: </strong>{{request.status}}</p> -->
 							<span class="divider green_div"></span>
 					</div>
 				</section>
@@ -68,13 +68,14 @@
 				<hr>
 				<div id="no_more_bullets">
 					<div ng-repeat="request in dashboard.requests | filter : filterActive">
-						<p><strong>Date Created: </strong> {{request.date}}</p>
-						<!-- <p><strong>Category: </strong> {{request.category}}</p> -->
-						<p><strong>Address: </strong><a href="#/pending"> {{request.address}}</a></p>
-						<!-- <p><strong>Phone: </strong> {{request.phone}}</p>
-						<p><strong>Description: </strong> {{request.description}}</p>
-						<p><strong>Access Instructions: </strong> {{request.instructions}}</p> -->
-						<p><strong>Status: </strong>{{request.status}}</p>
+						<ul id="no_more_bullets">
+							<li><a href="#">{{request.address}}</a>
+								<ul>
+									<li><strong>Submitted on: </strong> 07.25.2015{{request.date}}</li>
+									<li><strong>Category: </strong> {{request.category}}</li>
+									<li><strong>Description: </strong> {{request.description}}</li>
+									<!-- <li><strong>Status:</strong>{{request.status}}</li> -->
+								</ul>
 							<span class="divider green_div"></span>
 					</div>
 				</div>
@@ -87,38 +88,17 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Completed Requests</h3>
 				<hr>
-				<ul id="no_more_bullets">
-					<li><a href="#">1278 Buffalo Hills St.</a>
+				<div ng-repeat="request in dashboard.requests | filter : filterCompleted">
+				<div id="no_more_bullets">
+					<li><a href="#">{{request.address}}</a>
 						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
+							<li><strong>Completed on: </strong>07.28.2015{{request.date}}</li>
+							<li><strong>Status: </strong>{{request.status}}</li>
 						</ul>
 					</li>
 						<span class="divider green_div"></span>
-					<li><a href="#">567 Vanguard Point</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">2432 Econlockhatchee Tr.</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">567 Vanguard Point</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">1234 Poinsetta Ln.</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-				</ul>
+				</div>
+				</div>
 			</div>
 		</div>
 	</section>
