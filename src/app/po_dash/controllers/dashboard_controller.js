@@ -16,8 +16,8 @@
         });
       });
     });
-    $scope.filterActive = function( req ){ return req.status === 'Pending'; };
-    $scope.filterPending = function( req ){ return req.status === 'Active'; };
+    $scope.filterActive = function( req ){ return req.status === 'Active'; };
+    $scope.filterPending = function( req ){ return req.status === 'Pending'; };
     $scope.filterCompleted = function( req ){ return req.status === 'Completed'; };
   }]);
 
