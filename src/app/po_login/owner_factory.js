@@ -21,22 +21,22 @@
       logout: function(){
         auth.unauth();
         $sessionStorage.ownerSession = null;
-        $state.go( 'home' );
+        $state.go( 'main' );
       },
       loggedIn: function(){
         if ( auth.getAuth() ){
           return true;
         } else {
-          $state.go( 'home' );
+          $state.go( 'main' );
         }
       }
     };
 
-    // I need the ownerid stored in session data:
+    // I need the owner id stored in session data:
     function getOwner( ){
 
       $sessionStorage.ownerSession = authObj.$getAuth();
-      console.log( authObj.$getAuth() );
+      // console.log( authObj.$getAuth() );
       return null;
 
     }
