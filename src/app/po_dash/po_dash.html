@@ -23,7 +23,7 @@
 				<div class="pull-right margin_right_10">
 					<div class="margint45" ng-controller="LogoutController as LogoutCtrl">
 						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
-						<a ng-click="LogoutCtrl.logout()" href="#/" id="special_btn" class="btn blue_line">Logout</a>
+						<a ng-click="LogoutCtrl.logout()" href="#/main" id="special_btn" class="btn blue_line">Logout</a>
 					</div>
 				</div>
 			</div>
@@ -45,13 +45,14 @@
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
 				<section>
-					<div >
-						<p><strong>Date: </strong>{{maintenance.date}}</p>
-						<p><strong>Category: </strong> {{maintenance.category}}</p>
-						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
-						<p><strong>Phone: </strong>{{maintenance.phone}}</p>
-						<p><strong>Description: </strong>{{maintenance.description}}</p>
-						<p><strong>Access Instructions: </strong>{{maintenance.instructions}}</p>
+					<div ng-repeat="request in dashboard.requests | filter : filterPending">
+						<p><strong>Date: </strong> {{request.date}}</p>
+						<p><strong>Category: </strong> {{request.category}}</p>
+						<p><strong>Address: </strong><a href="#/pending"> {{request.address}}</a></p>
+						<p><strong>Phone: </strong> {{request.phone}}</p>
+						<p><strong>Description: </strong> {{request.description}}</p>
+						<p><strong>Access Instructions: </strong> {{request.instructions}}</p>
+						<p><strong>Status: </strong>{{request.status}}</p>
 							<span class="divider green_div"></span>
 					</div>
 				</section>
@@ -65,22 +66,22 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
 				<hr>
-				<ul id="no_more_bullets">
-				<li ng-repeat="request in dashboard.requests | filter : filterActive">
-					{{request.description}} :: {{request.status}}
-					<a href="#/active">1234 Poinsetta Ln.</a>
-					<ul>
-					<li><strong>Created on: </strong>{{request.date}}</li>
-					<li><strong>Description: </strong>Unpaid final notice</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-			</ul>
+				<div id="no_more_bullets">
+					<div ng-repeat="request in dashboard.requests | filter : filterActive">
+						<p><strong>Date Created: </strong> {{request.date}}</p>
+						<!-- <p><strong>Category: </strong> {{request.category}}</p> -->
+						<p><strong>Address: </strong><a href="#/pending"> {{request.address}}</a></p>
+						<!-- <p><strong>Phone: </strong> {{request.phone}}</p>
+						<p><strong>Description: </strong> {{request.description}}</p>
+						<p><strong>Access Instructions: </strong> {{request.instructions}}</p> -->
+						<p><strong>Status: </strong>{{request.status}}</p>
+							<span class="divider green_div"></span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Panel III -->
-<!--	completed_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
