@@ -27,13 +27,14 @@
       });
     };
     maintObj.updateRequest = function( request ){
-      var reqRef = new Firebase( FBDolmen + '/requests/' + request.dbId );
+      var reqRef = new Firebase( FBDolmen + '/requests/' +  request.dbId );
       var req = $firebaseObject( reqRef );
+      req.date = request.date;
       req.address = request.address;
       req.status = request.status;
       req.description = request.description;
-      req.tenant = req.tenant;
-      req.phone = req.phone;
+      req.tenant = request.tenant;
+      req.phone = request.phone;
       return req.$save();
     };
     return maintObj;
