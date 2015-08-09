@@ -10,7 +10,8 @@
    'dolmen.services',
    'dolmen.dashboard',
    'dolmen.requestForm',
-   'dolmen.scroll',
+   'dolmen.pendingDetail',
+   'dolmen.scroll'
   ])
   .config( function ( $stateProvider, $urlRouterProvider){
     $stateProvider
@@ -31,6 +32,13 @@
       .state( 'active', {
         url: '/active',
         templateUrl: 'app/po_dash/po_active_details.html',
+        data: {
+          needsAuth: true
+        }
+      })
+      .state( 'pending', {
+        url: '/pending',
+        templateUrl: 'app/po_dash/pending_requests.html',
         data: {
           needsAuth: true
         }
