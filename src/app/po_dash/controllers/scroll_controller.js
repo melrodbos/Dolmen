@@ -48,7 +48,7 @@ angular.module('dolmen.scroll', [] )
         }
 
         //otherwise, ignore
-      }
+      };
 
   }])
   .provider("ngScrollToOptions", function() {
