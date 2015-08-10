@@ -46,14 +46,19 @@
 				<hr>
 				<section>
 					<div ng-repeat="request in dashboard.requests | filter : filterPending">
-						<p><strong>Date: </strong> {{request.date}}</p>
-						<p><strong>Category: </strong> {{request.category}}</p>
-						<p><strong>Address: </strong><a href="#/pending"> {{request.address}}</a></p>
-						<p><strong>Phone: </strong> {{request.phone}}</p>
-						<p><strong>Description: </strong> {{request.description}}</p>
-						<p><strong>Access Instructions: </strong> {{request.instructions}}</p>
-						<!-- <p><strong>Status: </strong>{{request.status}}</p> -->
-							<span class="divider green_div"></span>
+						<div id="no_more_bullets">
+							<li><a href="#">{{request.address}}</a>
+								<ul>
+									<li><strong>Submitted on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Contact: </strong>{{request.tenant}}</li>
+									<li><strong>Contact phone: </strong>{{request.phone}}</li>
+									<li><strong>Category: </strong>{{request.category}}</li>
+									<li><strong>Description: </strong>{{request.description}}</li>
+									<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
+								</ul>
+							</li>
+								<span class="divider green_div"></span>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -66,19 +71,19 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
 				<hr>
-				<div id="no_more_bullets">
 					<div ng-repeat="request in dashboard.requests | filter : filterActive">
-						<ul id="no_more_bullets">
+						<div id="no_more_bullets">
 							<li><a href="#">{{request.address}}</a>
 								<ul>
-									<li><strong>Submitted on: </strong> 07.25.2015{{request.date}}</li>
-									<li><strong>Category: </strong> {{request.category}}</li>
-									<li><strong>Description: </strong> {{request.description}}</li>
-									<!-- <li><strong>Status:</strong>{{request.status}}</li> -->
+									<li><strong>Last worked on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Category: </strong>{{request.category}}</li>
+									<li><strong>Description: </strong>{{request.description}}</li>
+									<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
 								</ul>
-							<span class="divider green_div"></span>
+							</li>
+								<span class="divider green_div"></span>
+						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -92,8 +97,10 @@
 				<div id="no_more_bullets">
 					<li><a href="#">{{request.address}}</a>
 						<ul>
-							<li><strong>Completed on: </strong>07.28.2015{{request.date}}</li>
-							<li><strong>Status: </strong>{{request.status}}</li>
+							<li><strong>Completed on: </strong>07-28-2015{{request.date}}</li>
+							<li><strong>Category: </strong>{{request.category}}</li>
+							<li><strong>Description: </strong>{{request.description}}</li>
+							<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
 						</ul>
 					</li>
 						<span class="divider green_div"></span>
