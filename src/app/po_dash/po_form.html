@@ -5,7 +5,7 @@
 			<div class="pull-left">
 				<div class="logo">
 					<!-- Font Awesome for logo placement -->
-					<a href="#/main"><i class="fa fa-comments-o"></i>
+					<a href="#/"><i class="fa fa-comments-o"></i>
             <h1>Dolmen</h1></a>
 				</div>
 			</div>
@@ -29,16 +29,15 @@
 		</div>
 </header>
 <!-- End of header -->
-<section class="signup" id="signup">
+<section class="signup" id="signup" ng-controller="RequestController as request">
 	<div class="row">
 		<div class="col-md-12">
 			<h2>Submit a Request</h2>
 			<!-- Start of Maintenance Request Form -->
-			<form class="po_new_req" class="form-group" id="mn_req_form" ng-controller="RequestController as request" ng-submit="request.submit()">
-				<!-- TODO: Add calendar option -->
-				<label for="date">Date</label>
-				<input type=date ng-model="request.date" class="form-control" step=1 min=2014-01-01 required>
-				<label>Category</label>
+			<form class="po_new_req" class="form-group" id="mn_req_form" >
+				<label for="date">Date submitted: </label>
+				<input type="date" id="theDate" ng-model="request.date" class="form-control" step=1 min=2014-01-01 required>
+				<label>Category: </label>
 				<select type="text" ng-model="request.category" class="form-control" name="requests" required>
 					<option value="" default selected>Select a Category</option>
 					<option value="Appliance">Appliance</option>
@@ -56,22 +55,25 @@
 					<option value="Roof">Roof</option>
 					<option value="Water Heater">Water Heater</option>
 				</select>
-				<label>Property Address</label>
+				<label>Property Address: </label>
 				<input type="text" ng-model="request.address" class="form-control" name="address" placeholder="1234 Utopia St. Orlando, FL 32801" required/>
-				<label>Phone</label>
+				<label>Contact Name: </label>
+				<input type="text" ng-model="request.tenant" class="form-control" name="tenant" placeholder="Taylor Breeze" required>
+				<label>Contact phone: </label>
 				<input type="text" ng-model="request.phone" class="form-control" name="phone" placeholder="555-555-5555" required/>
-				<label>Description</label>
+				<label>Description: </label>
 				<textarea ng-model="request.description" class="form-control" name="description" rows="6" cols="40" required></textarea>
-				<label>Access Instructions (Optional)</label>
+				<label>Access Instructions (Optional): </label>
 				<textarea ng-model="request.instructions" class="form-control" name="access" cols="40" rows="3">
 				</textarea>
-				<label>Status</label>
+				<label>Status: </label>
 				<select type="text" ng-model="request.status" name="status" class="form-control">
-					<option value="" default selected>Pending</option>
+					<option value="" default selected="selected">Select Status: </option>
+					<option value="Pending">Pending</option>
 					<option value="Active">Active</option>
 					<option value="Completed">Completed</option>
 				</select>
-				<button type="submit" value="Submit" class="btn blue" id="submit_mr">Submit</button>
+				<button type="submit" value="Submit" class="btn blue" id="submit_mr" ng-click="request.submit()">Submit</button>
 			</form>
 			<!-- End of maintenance request form -->
 		</div>

@@ -23,7 +23,7 @@
 				<div class="pull-right margin_right_10">
 					<div class="margint45" ng-controller="LogoutController as LogoutCtrl">
 						<!-- <a href="#/main" id="special_btn" class="btn blue_line">Home</a> -->
-						<a ng-click="LogoutCtrl.logout()" href="#/" id="special_btn" class="btn blue_line">Logout</a>
+						<a ng-click="LogoutCtrl.logout()" href="#/main" id="special_btn" class="btn blue_line">Logout</a>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 </section>
 
 <!-- Start of Panels -->
-<div id="panel_container">
+<div id="panel_container" ng-controller="DashboardController as dashboard">
 	<!-- Panel I -->
 	<!-- pending_panel.js controller here: -->
 	<section class="col-md-4">
@@ -44,15 +44,21 @@
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Pending Requests</h3>
 				<hr>
-				<section ng-controller="ShowController as show" ng-view="request in show.requests">
-					<div ng-repeat="maintenance in show.requests track by $index">
-						<p><strong>Date: </strong>{{maintenance.date}}</p>
-						<p><strong>Category: </strong> {{maintenance.category}}</p>
-						<p><strong>Address: </strong><a href="#/pending">{{maintenance.address}}</a></p>
-						<p><strong>Phone: </strong>{{maintenance.phone}}</p>
-						<p><strong>Description: </strong>{{maintenance.description}}</p>
-						<p><strong>Access Instructions: </strong>{{maintenance.instructions}}</p>
-							<span class="divider green_div"></span>
+				<section>
+					<div ng-repeat="request in dashboard.requests | filter : filterPending">
+						<div id="no_more_bullets">
+							<li><a href="#/pending">{{request.address}}</a>
+								<ul>
+									<li><strong>Submitted on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Contact: </strong>{{request.tenant}}</li>
+									<li><strong>Contact phone: </strong>{{request.phone}}</li>
+									<li><strong>Category: </strong>{{request.category}}</li>
+									<li><strong>Description: </strong>{{request.description}}</li>
+									<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
+								</ul>
+							</li>
+								<span class="divider green_div"></span>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -60,91 +66,46 @@
 	</section>
 	<!-- Panel II -->
 	<!-- active_panel.js controller here: -->
-	<section class="col-md-4" ng-controller="ActiveController as active" ng-view="texto in active.texts">
+	<section class="col-md-4" >
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Active Requests</h3>
 				<hr>
-				<ul id="no_more_bullets">
-				<li>
-					<a href="#/active">1234 Poinsetta Ln.</a>
-					<ul>
-					<li><strong>Created on: </strong>07.22.2015</li>
-					<li><strong>Description: </strong>Unpaid final notice</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-				<li><a href="#/active">567 Vanguard Point</a>
-					<ul>
-						<li><strong>Created on: </strong>07.23.2015</li>
-						<li><strong>Description: </strong>Cracked window</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-				<li><a href="#/active">2002 Stone Castle Terrace</a>
-					<ul>
-						<li><strong>Created on: </strong>07.24.2015</li>
-						<li><strong>Description: </strong>Pest Control</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-				<li><a href="#">2432 Econlochatchee Tr.</a>
-					<ul>
-						<li><strong>Created on: </strong>07.24.2015</li>
-						<li><strong>Description: </strong>Door locked</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-				<li><a href="#">5678 Colonial Pointe Apt. 101</a>
-					<ul>
-						<li><strong>Created on: </strong>07.25.2015</li>
-						<li><strong>Description: </strong>Clogged toilet</li>
-					</ul>
-				</li>
-				<span class="divider green_div"></span>
-			</ul>
+					<div ng-repeat="request in dashboard.requests | filter : filterActive">
+						<div id="no_more_bullets">
+							<li><a href="#/active">{{request.address}}</a>
+								<ul>
+									<li><strong>Last worked on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Category: </strong>{{request.category}}</li>
+									<li><strong>Description: </strong>{{request.description}}</li>
+									<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
+								</ul>
+							</li>
+								<span class="divider green_div"></span>
+						</div>
+					</div>
 			</div>
 		</div>
 	</section>
 	<!-- Panel III -->
-<!--	completed_panel.js controller here: -->
 	<section class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3 id="po_panel_h3">Completed Requests</h3>
 				<hr>
-				<ul id="no_more_bullets">
-					<li><a href="#">1278 Buffalo Hills St.</a>
+				<div ng-repeat="request in dashboard.requests | filter : filterCompleted">
+				<div id="no_more_bullets">
+					<li><a href="#/completed">{{request.address}}</a>
 						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
+							<li><strong>Completed on: </strong>07-28-2015{{request.date}}</li>
+							<li><strong>Category: </strong>{{request.category}}</li>
+							<li><strong>Description: </strong>{{request.description}}</li>
+							<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
 						</ul>
 					</li>
 						<span class="divider green_div"></span>
-					<li><a href="#">567 Vanguard Point</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">2432 Econlockhatchee Tr.</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">567 Vanguard Point</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-					<li><a href="#">1234 Poinsetta Ln.</a>
-						<ul>
-							<li><strong>Completed on: </strong>07.25.2015</li>
-						</ul>
-					</li>
-						<span class="divider green_div"></span>
-				</ul>
+				</div>
+				</div>
 			</div>
 		</div>
 	</section>

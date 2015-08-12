@@ -2,27 +2,14 @@
   'use strict';
 
   var app = angular.module( 'dolmen' );
-  app.controller( 'MainController', function( FBDolmen, $firebaseArray, $firebaseObject, Auth ){
+  app.controller( 'MainController', function( FBDolmen, Auth ){
 
     var self = this;
-    var ownerInfo = new Firebase( FBDolmen + '/owners' );
-
-    this.obj = $firebaseArray( ownerInfo );
-    console.log( this.obj );
-
-    this.ownerArray = {};
-
-    this.googleLogin = Auth.googleLogin;
-
-    Auth.onAuth( function( owner ){
-      self.owner = owner;
-      if ( owner === null ){
-        console.log( 'null' );
-      } else {
-        console.log( 'owner' );
-      }
+    self.googleLogin = function( event ){
+      event.preventDefault();
+      Auth.googleLogin();
+    };
     });
-  });
 })();//End of IIFE
 
 

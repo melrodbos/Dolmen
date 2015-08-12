@@ -5,48 +5,62 @@
    'ui.router',
    'firebase',
    'ui.bootstrap',
-   'xeditable' ])
+   'xeditable',
+   'ngStorage',
+   'dolmen.services',
+   'dolmen.dashboard',
+   'dolmen.requestForm',
+   'dolmen.pendingDetail',
+  //  'dolmen.pF',
+   'dolmen.scroll'
+  ])
   .config( function ( $stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/main');
     $stateProvider
-      .state('home', {
-        url: '/',
+      .state('main', {
+        url: '/main',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'MainCtrl'
+        data: {
+          needsAuth: false
+        }
       })
-
       .state('dashboard', {
         url: '/dashboard',
-        templateUrl: 'app/po_dash/po_dash.html'
-        // controller: 'DashboardController',
-        // controllerAs: 'dashboard'
+        templateUrl: 'app/po_dash/po_dash.html',
+        data: {
+          needsAuth: true
+        }
       })
-
-      .state('pending', {
+      .state( 'active', {
+        url: '/active',
+        templateUrl: 'app/po_dash/po_active_details.html',
+        parent: '/dashboard',
+        data: {
+          needsAuth: true
+        }
+      })
+      .state( 'pending', {
         url: '/pending',
         templateUrl: 'app/po_dash/pending_requests.html',
         controller: 'PendingController',
-        controllerAs: 'pending'
+        controllerAs: 'pending',
+        data: {
+          needsAuth: true
+        }
       })
-
+      .state( 'completed', {
+        url: '/completed',
+        templateUrl: 'app/po_dash/completed.html',
+        data: {
+          needsAuth: true
+        }
+      })
       .state('po_form', {
         url: '/requests',
-        templateUrl: 'app/po_dash/po_form.html'
-        // controller: 'RequestController',
-        // controllerAs: 'request',
-      })
-
-      .state('po_active', {
-        url: '/active',
-        templateUrl: 'app/po_dash/po_active_details.html'
-      })
-
-      .state('properties', {
-        url: '/properties',
-        templateUrl: 'app/po_dash/po_properties.html'
+        templateUrl: 'app/po_dash/po_form.html',
+        data: {
+          needsAuth: true
+        }
       });
-
-      $urlRouterProvider.otherwise('/');
-
-}); //End of routeConfig
+    }); //End of routeConfig
 })(); //End of IIFE
