@@ -1,15 +1,25 @@
 (function() {
   'use strict';
 
-  describe('controllers', function(){
+  describe( 'controllers', function(){
 
-    beforeEach(module('dolmen'));
+    var scope;
 
-    it('should define more than 5 awesome things', inject(function($controller) {
-      var vm = $controller('MainController', 'PoLoginController');
+    beforeEach( module( 'dolmen' ));
 
-      expect(angular.isArray(vm.awesomeThings)).toBeTruthy();
-      expect(vm.awesomeThings.length > 5).toBeTruthy();
+    beforeEach(inject( function( $rootScope ){
+      scope = $rootScope.$rootScope.$new();
+    }));
+
+    it('should define more than 5 awesome things', inject( function( $controller ) {
+      expect( scope.awesomeThings ).toBeUndefined();
+
+      $controller( 'MainController', {
+        $scope: scope
+      });
+
+      expect( angular.isArray(scope.awesomeThings )).toBeTruthy();
+      expect( scope.awesomeThings.length > 5 ).toBeTruthy();
     }));
   });
 })();

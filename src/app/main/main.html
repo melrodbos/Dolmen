@@ -15,14 +15,14 @@
             <nav class="nav" id="site-navigation" class="main-navigation">
               <ul>
               <!--   <li><a href="#/process">Process</a></li> -->
-                <li><a href="#/features">Features</a></li>
+              <!-- Scrollto directive -->
+                <li><a scroll-to="features"href="">Features</a></li>
               </ul>
             </nav>
           </div>
-          <div ng-controller="PoLoginController as PoLogin" class="pull-right margin_right_10">
-            <div class="margint45">
-              <a href="#/dashboard" class="btn green_line" ng-click="PoLogin.login()" id="special_btn">Login</a>
-
+          <div class="pull-right margin_right_10">
+            <div class="margint45" ng-controller="MainController as MainCtrl">
+              <a href="" class="btn green_line" ng-click="MainCtrl.googleLogin( $event )" id="special_btn">Login</a>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <span class="divider"></span>
           <p>An app for Property Owners.</p>
           <div>
-          <a href="#/dashboard" class="btn blue">Learn More</a>
+          <a scroll-to="features"href="" class="btn blue">Learn More</a>
           </div>
         </div>
       </div>

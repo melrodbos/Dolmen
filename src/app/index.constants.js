@@ -6,6 +6,7 @@
     .module('dolmen')
     .constant('malarkey', malarkey)
     .constant('toastr', toastr)
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant( 'FBDolmen', 'https://dolmen.firebaseio.com' );
 
 })();
