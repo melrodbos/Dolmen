@@ -47,7 +47,7 @@
 				<section>
 					<div ng-repeat="request in dashboard.requests | filter : filterPending">
 						<div id="no_more_bullets">
-							<li><a href="#">{{request.address}}</a>
+							<li><a href="#/pending">{{request.address}}</a>
 								<ul>
 									<li><strong>Submitted on: </strong>08-06-2015{{request.date}}</li>
 									<li><strong>Contact: </strong>{{request.tenant}}</li>
@@ -73,7 +73,7 @@
 				<hr>
 					<div ng-repeat="request in dashboard.requests | filter : filterActive">
 						<div id="no_more_bullets">
-							<li><a href="#">{{request.address}}</a>
+							<li><a href="#/active">{{request.address}}</a>
 								<ul>
 									<li><strong>Last worked on: </strong>08-06-2015{{request.date}}</li>
 									<li><strong>Category: </strong>{{request.category}}</li>
@@ -95,7 +95,7 @@
 				<hr>
 				<div ng-repeat="request in dashboard.requests | filter : filterCompleted">
 				<div id="no_more_bullets">
-					<li><a href="#">{{request.address}}</a>
+					<li><a href="#/completed">{{request.address}}</a>
 						<ul>
 							<li><strong>Completed on: </strong>07-28-2015{{request.date}}</li>
 							<li><strong>Category: </strong>{{request.category}}</li>
