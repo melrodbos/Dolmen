@@ -3,14 +3,13 @@
   'use strict';
 
   angular.module( 'dolmen.services', [ 'firebase' ] )
-  .service( 'Maintenance', [
-    '$rootScope',
-    'FBDolmen',
-    '$firebaseArray',
+  .service( 'Maintenance', [ '$rootScope','FBDolmen','$firebaseArray',
     '$firebaseObject',
     function( $rootScope, FBDolmen, $firebaseArray, $firebaseObject ) {
+
     var maintObj = { };
     var ref = new Firebase( FBDolmen + '/requests' );
+
     maintObj.getRequests = function( oid ){
       ref.orderByChild( 'oid' ).equalTo( oid ).on( 'value', function( res ){
         var reqList = res.val();
