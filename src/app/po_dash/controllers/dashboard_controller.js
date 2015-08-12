@@ -4,8 +4,10 @@
   angular.module( 'dolmen.dashboard', [ 'dolmen.services', 'ngStorage' ] )
   .controller( 'DashboardController', [ '$rootScope', '$scope', 'Maintenance', '$sessionStorage', '$timeout',
   function( $rootScope, $scope, Maintenance, $sessionStorage, $timeout ){
+
     var self = this;
-    self.requests = [];
+    self.requests = [ ];
+
     Maintenance.getRequests( $sessionStorage.ownerSession.google.id );
     $rootScope.$on( 'requestsRetrieved', function(){
       $timeout( function(){
