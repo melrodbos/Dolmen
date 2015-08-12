@@ -11,9 +11,11 @@
    'dolmen.dashboard',
    'dolmen.requestForm',
    'dolmen.pendingDetail',
+  //  'dolmen.pF',
    'dolmen.scroll'
   ])
   .config( function ( $stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/main');
     $stateProvider
       .state('main', {
         url: '/main',
@@ -32,6 +34,7 @@
       .state( 'active', {
         url: '/active',
         templateUrl: 'app/po_dash/po_active_details.html',
+        parent: '/dashboard',
         data: {
           needsAuth: true
         }
@@ -39,6 +42,15 @@
       .state( 'pending', {
         url: '/pending',
         templateUrl: 'app/po_dash/pending_requests.html',
+        controller: 'PendingController',
+        controllerAs: 'pending',
+        data: {
+          needsAuth: true
+        }
+      })
+      .state( 'completed', {
+        url: '/completed',
+        templateUrl: 'app/po_dash/completed.html',
         data: {
           needsAuth: true
         }
