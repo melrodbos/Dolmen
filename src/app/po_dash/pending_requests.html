@@ -49,21 +49,22 @@
 
 <!-- Start of Detailed Request -->
 <a ng-model="$scope.filterPending"></a>
-<div id="active_detail">
+<div id="active_detail" ng-controller="PendingController as pending">
   <section class="col-lg-12">
     <div class="panel panel-default">
       <div class="panel-body">
         <h3 id="po_panel_h3">Request Details</h3>
         <hr>
-        <section>
+        <form editable-form>
           <div>
             <p>
-              <strong>Date: </strong>
-              {{ pending.date }}
+              <strong>Submitted on: </strong>
+              <a ng-click="$form.$show()" ng-blur="$form.$submit()"  href="#" editable-text="pending.requests.date">{{ pending.requests.date || 'empty' }}</a>
+
             </p>
             <p>
               <strong>Category: </strong>
-              <a href="#" editable-text="pending.category">{{ pending.requests.category || 'empty' }}</a>
+              <a href="#" editable-text="pending.requests.category">{{ pending.requests.category || 'empty' }}</a>
             </p>
 
             <hr>
@@ -71,37 +72,41 @@
             <hr>
             <p>
               <strong>Address: </strong>
-              <a href="#" editable-text="pending.address">{{ pending.requests.address || 'empty' }}</a></p>
+              <a href="#" editable-text="pending.requests.address">{{ pending.requests.address || 'empty' }}</a></p>
             <hr>
             <h5 id="po_panel_h5">Tenant Info</h5>
             <hr>
             <p>
               <strong>Tenant Name: </strong>
-              <a href="#" editable-text="pending.tenant">{{ pending.tenant || 'empty' }}</a></p>
+              <a href="#" editable-text="pending.requests.tenant">{{ pending.requests.tenant || 'empty' }}</a></p>
             <p>
-              <strong>Phone: </strong>{{ pending.phone || 'empty' }}</p>
+              <strong>Phone: </strong>
+              <a href="#" editable-text="pending.requests.phone">
+              {{ pending.requests.phone || 'empty' }}</a>
+            </p>
             <p>
-              <strong>Email: </strong>{{ pending.email || 'empty' }}</p>
+              <strong>Email: </strong>
+              <a href="#" editable-text="pending.requests.phone">{{ pending.requests.email || 'empty' }}</a></p>
               <hr>
               <h5 id="po_panel_h5">Description</h5>
               <hr>
               <p>
                 <strong>Description: </strong>
-                <a href="#" editable-text="pending.description">{{ pending.description || 'empty' }}</a></p>
+                <a href="#" editable-text="pending.requests.description">{{ pending.requests.description || 'empty' }}</a></p>
             <hr>
             <h5 id="po_panel_h5">Comments</h5>
             <hr>
-            <p><a href="#" editable-textarea="pending.comments" e-rows="7" e-cols="40">
-              {{ pending.comments || 'empty' }}</a></p>
+            <p><a href="#" editable-textarea="pending.requests.comments" e-rows="7" e-cols="40">
+              {{ pending.requests.comments || 'empty' }}</a></p>
 
-        <select type="text" ng-model="pending.status" class="form-control" name="pending" required><option value="" default selected>Select Status</option>
+        <select type="text" ng-model="pending.requests.status" class="form-control" name="pending" id="theCat" required><option value="" default selected>Select Status</option>
           <option value="Active">Active</option>
           <option value="Pending">Pending</option>
           <option value="Completed">Completed</option>
         </select>
-        <button type="submit" ng-click="function()" value="Submit" class="btn blue" id="submit_pdg">Save Changes</button>
+        <button type="submit" ng-click="pending.updateRequest($event)" value="Submit" class="btn blue" id="submit_pdg">Save Changes</button>
         </div>
-        </section>
+      </form>
       </div>
     </div>
   </section>

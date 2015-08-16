@@ -19,14 +19,17 @@
     "ngstorage": "~0.3.7",
     "angularfire": "~1.1.2",
     "flexslider": "~2.5.0",
-    "angular-xeditable": "~0.1.9"
+    "angular-xeditable": "~0.1.9",
+    "angular-datepicker": "~1.0.12",
+    "angularjs-datepicker": "~0.2.6",
+    "angular-date-picker": "~1.2.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
   },
   "resolutions": {
     "jquery": "~2.1.4",
-    "angular": "~1.4.0"
+    "angular": "~1.4.2"
   },
   "homepage": "https://github.com/melrodbos/dolmen",
   "authors": [

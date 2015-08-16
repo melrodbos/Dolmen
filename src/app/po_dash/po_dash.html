@@ -29,7 +29,7 @@
 			</div>
 		</div>
 </header><!-- End of Header -->
-<!-- Create Request Controller -->
+
 <section class="footer_wrap" id="sub_nav">
 	<div class="btn.green_line">
 	<a href="#/requests" id="special_btn" class="btn green_line">Create a New Request</a>
@@ -47,9 +47,9 @@
 				<section>
 					<div ng-repeat="request in dashboard.requests | filter : filterPending">
 						<div id="no_more_bullets">
-							<li><a href="#/pending">{{request.address}}</a>
+							<li><a href="#/request/{{request.dbId}}">{{request.address}}</a>
 								<ul>
-									<li><strong>Submitted on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Submitted on: </strong>{{request.date}}</li>
 									<li><strong>Contact: </strong>{{request.tenant}}</li>
 									<li><strong>Contact phone: </strong>{{request.phone}}</li>
 									<li><strong>Category: </strong>{{request.category}}</li>
@@ -73,9 +73,9 @@
 				<hr>
 					<div ng-repeat="request in dashboard.requests | filter : filterActive">
 						<div id="no_more_bullets">
-							<li><a href="#/active">{{request.address}}</a>
+							<li><a href="#/request/{{request.dbId}}">{{request.address}}</a>
 								<ul>
-									<li><strong>Last worked on: </strong>08-06-2015{{request.date}}</li>
+									<li><strong>Submitted on: </strong>{{request.date}}</li>
 									<li><strong>Category: </strong>{{request.category}}</li>
 									<li><strong>Description: </strong>{{request.description}}</li>
 									<!-- <li><strong>Status: </strong>{{request.status}}</li> -->
@@ -95,9 +95,9 @@
 				<hr>
 				<div ng-repeat="request in dashboard.requests | filter : filterCompleted">
 				<div id="no_more_bullets">
-					<li><a href="#/completed">{{request.address}}</a>
+					<li><a href="#/request/{{request.dbId}}">{{request.address}}</a>
 						<ul>
-							<li><strong>Completed on: </strong>07-28-2015{{request.date}}</li>
+							<li><strong>Submitted on: </strong>{{request.date}}</li>
 							<li><strong>Category: </strong>{{request.category}}</li>
 							<li><strong>Description: </strong>{{request.description}}</li>
 							<!-- <li><strong>Status: </strong>{{request.status}}</li> -->

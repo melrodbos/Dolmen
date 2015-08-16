@@ -6,6 +6,9 @@
    'firebase',
    'ui.bootstrap',
    'xeditable',
+  //  'datePicker',
+  //  '720kb.datepicker',
+  //  'mp.datePicker',
    'ngStorage',
    'dolmen.services',
    'dolmen.dashboard',
@@ -31,16 +34,16 @@
           needsAuth: true
         }
       })
-      .state( 'active', {
-        url: '/active',
-        templateUrl: 'app/po_dash/po_active_details.html',
-        parent: '/dashboard',
-        data: {
-          needsAuth: true
-        }
-      })
-      .state( 'pending', {
-        url: '/pending',
+      // .state( 'active', {
+      //   url: '/active',
+      //   templateUrl: 'app/po_dash/po_active_details.html',
+      //   parent: '/dashboard',
+      //   data: {
+      //     needsAuth: true
+      //   }
+      // })
+      .state( 'request', {
+        url: '/request/:id',
         templateUrl: 'app/po_dash/pending_requests.html',
         controller: 'PendingController',
         controllerAs: 'pending',
@@ -48,13 +51,13 @@
           needsAuth: true
         }
       })
-      .state( 'completed', {
-        url: '/completed',
-        templateUrl: 'app/po_dash/completed.html',
-        data: {
-          needsAuth: true
-        }
-      })
+      // .state( 'completed', {
+      //   url: '/completed',
+      //   templateUrl: 'app/po_dash/completed.html',
+      //   data: {
+      //     needsAuth: true
+      //   }
+      // })
       .state('po_form', {
         url: '/requests',
         templateUrl: 'app/po_dash/po_form.html',
