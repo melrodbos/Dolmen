@@ -13,7 +13,7 @@
     var obj = Maintenance.getRequest( $stateParams.id );
     obj.$loaded().then( function(){
       $timeout( function(){
-        console.log( obj );
+        // console.log( obj );
         me.requests = obj;
       });
     });
