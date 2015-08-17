@@ -33,7 +33,7 @@
           self.instructions = '';
           self.status = '';
           self.email = '';
-          self.comments = '';
+          // self.comments = '';
         };
 
         //date picker:
