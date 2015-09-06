@@ -28,7 +28,7 @@
     maintObj.updateRequest = function( request ){
       var reqRef = new Firebase( FBDolmen + '/requests/' +  request.id );
       var req = $firebaseObject( reqRef );
-      console.log(reqRef);
+      // console.log(reqRef);
       req.date = request.date;
       req.address = request.address;
       req.status = jQuery( '#theCat' ).val();
