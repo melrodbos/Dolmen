@@ -1,6 +1,6 @@
 {
   "name": "dolmen",
-  "version": "0.2.2",
+  "version": "1.2.3",
   "dependencies": {
     "angular-animate": "~1.4.0",
     "angular-cookies": "~1.4.0",
