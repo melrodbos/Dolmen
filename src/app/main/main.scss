@@ -277,7 +277,25 @@ margin: 0 auto;
 
 }
 
-/* --------------- Dashboard*/
+/* --------------- Dashboard */
 #po_panel_h3{
 	text-transform: uppercase;
+}
+
+/*---------------- Form */
+#calendario {
+    background-color: #F2F2F2;
+    padding: 0px 8.5em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #5F6360;
+    line-height: 2.78;
+    letter-spacing: 0.05em;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    text-transform: uppercase;
+		border-radius: 2px;
+		margin: 0;
+		
 }

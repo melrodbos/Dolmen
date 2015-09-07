@@ -4,8 +4,8 @@
 
   angular.module( 'dolmen.services', [ 'firebase' ] )
   .service( 'Maintenance', [ '$rootScope','FBDolmen','$firebaseArray',
-    '$firebaseObject',
-    function( $rootScope, FBDolmen, $firebaseArray, $firebaseObject ) {
+    '$firebaseObject', '$sessionStorage', '$timeout', '$state',
+    function( $rootScope, FBDolmen, $firebaseArray, $firebaseObject, $sessionStorage, $timeout, $state ) {
 
     var maintObj = { };
     var ref = new Firebase( FBDolmen + '/requests' );
@@ -26,17 +26,34 @@
       });
     };
     maintObj.updateRequest = function( request ){
-      var reqRef = new Firebase( FBDolmen + '/requests/' +  request.dbId );
+      var reqRef = new Firebase( FBDolmen + '/requests/' +  request.id );
       var req = $firebaseObject( reqRef );
+      // console.log(reqRef);
       req.date = request.date;
       req.address = request.address;
-      req.status = request.status;
+      req.status = jQuery( '#theCat' ).val();
       req.description = request.description;
+      req.category = request.category;
+      req.instructions = request.instructions;
       req.tenant = request.tenant;
       req.phone = request.phone;
-      return req.$save();
+      req.email = request.email;
+      request.comments = request.comments;
+      req.oid = request.oid;
+        req.$save().then(function( ref ){
+          ref.key() === req.$id;
+          $timeout(function(){
+            $state.go( 'dashboard' );
+          });
+        });
+    };
+    maintObj.getRequest = function( request ){
+      var r = new Firebase( FBDolmen + '/requests/' + request );
+      var obj = $firebaseObject( r );
+      return obj;
     };
     return maintObj;
+
   }]);
 
   })();
