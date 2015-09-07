@@ -34,9 +34,19 @@
 		<div class="col-md-12">
 			<h2>Submit a Request</h2>
 			<!-- Start of Maintenance Request Form -->
-			<form class="po_new_req" class="form-group" id="mn_req_form" >
-				<label for="date">Date submitted: </label>
-				<input type="date" id="theDate" ng-model="request.date" class="form-control" step=1 min=2014-01-01 required>
+			<form class="po_new_req" class="form-group" id="mn_req_form">
+<!--     <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+ -->
+    <label>Date submitted:</label>
+		<input type="date" id="theDate" class="form-control" step=1 min=2014-01-01 required>
+
+<!--             <div class="input-group">
+  <input type="date" class="form-control" datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+							<span class="input-group-btn">
+    <button type="button" class="btn btn-default" id="calendario" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+  </span>
+</div>
+ -->
 				<label>Category: </label>
 				<select type="text" ng-model="request.category" class="form-control" name="requests" required>
 					<option value="" default selected>Select a Category</option>
@@ -58,13 +68,18 @@
 				<label>Property Address: </label>
 				<input type="text" ng-model="request.address" class="form-control" name="address" placeholder="1234 Utopia St. Orlando, FL 32801" required/>
 				<label>Contact Name: </label>
-				<input type="text" ng-model="request.tenant" class="form-control" name="tenant" placeholder="Taylor Breeze" required>
+				<input type="text" ng-model="request.tenant" class="form-control" name="tenant" placeholder="Taylor Breeze" required/>
 				<label>Contact phone: </label>
 				<input type="text" ng-model="request.phone" class="form-control" name="phone" placeholder="555-555-5555" required/>
+				<label>Contact email: </label>
+				<input type="text" ng-model="request.email" class="form-control" name="email" placeholder="contact@email.com" />
 				<label>Description: </label>
-				<textarea ng-model="request.description" class="form-control" name="description" rows="6" cols="40" required></textarea>
+				<textarea ng-model="request.description" class="form-control" name="description" rows="6" cols="40"></textarea>
+				<label>Comments (Optional): </label>
+				<textarea ng-model="request.comments" class="form-control" name="comments" cols="40" rows="3">
+				</textarea>
 				<label>Access Instructions (Optional): </label>
-				<textarea ng-model="request.instructions" class="form-control" name="access" cols="40" rows="3">
+				<textarea ng-model="request.instructions" class="form-control" name="instructions" cols="40" rows="3">
 				</textarea>
 				<label>Status: </label>
 				<select type="text" ng-model="request.status" name="status" class="form-control">
